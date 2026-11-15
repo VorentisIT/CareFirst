@@ -57,8 +57,12 @@ const classes = ["section", className, background].filter(Boolean).join(" ");
 		}
 
 		&.section--primary {
-			padding-block: 6.4rem;
+			padding-block: clamp(2.2rem, 2.2vw, 3.2rem);
 			background-color: var(--color-primary);
+		}
+
+		&.section--primary + .section {
+			padding-top: clamp(3.2rem, 3.5vw, 4.4rem);
 		}
 
 		&.section--info {

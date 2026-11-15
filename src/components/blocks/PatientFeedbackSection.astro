@@ -1,0 +1,267 @@
+---
+import { Icon } from "astro-icon/components";
+import Section from "@ui/Section.astro";
+
+interface Props {
+	data: any;
+}
+
+const {
+	data: { ...props },
+} = Astro.props;
+
+if (!props || !props.items) return null;
+---
+
+<Section class="section--patient-feedback" background={props.config?.background || "bg-2"}>
+	<div class="feedback-header">
+		{props.badge && <span class="feedback-badge">{props.badge}</span>}
+		{props.title && <h2 class="feedback-title" set:html={props.title} />}
+		{props.subtitle && <p class="feedback-subtitle">{props.subtitle}</p>}
+		
+		{props.metrics && (
+			<div class="feedback-metrics-strip">
+				{props.metrics.map((m: any) => (
+					<div class="metric-pill">
+						<strong>{m.value}</strong>
+						<span>{m.label}</span>
+					</div>
+				))}
+			</div>
+		)}
+	</div>
+
+	<div class="feedback-grid">
+		{
+			props.items.map((item: any) => (
+				<div class="feedback-card">
+					<div class="feedback-card__meta">
+						<div class="rating-stars" aria-label="5 stars rating">
+							{Array.from({ length: item.rating || 5 }).map(() => (
+								<Icon name="star" class="star-icon" />
+							))}
+						</div>
+						{item.stage && <span class="recovery-badge">{item.stage}</span>}
+					</div>
+
+					<p class="feedback-quote">“{item.quote || item.text}”</p>
+
+					<div class="feedback-author">
+						<div class="author-avatar" aria-hidden="true">
+							{item.name ? item.name.charAt(0) : "P"}
+						</div>
+						<div class="author-info">
+							<strong class="author-name">{item.name}</strong>
+							<span class="treatment-tag">{item.treatment || item.condition || "Verified CareFirst Patient"}</span>
+						</div>
+					</div>
+
+					{item.outcome && (
+						<div class="feedback-outcome">
+							<Icon name="safety" class="outcome-icon" />
+							<span><strong>Outcome:</strong> {item.outcome}</span>
+						</div>
+					)}
+				</div>
+			))
+		}
+	</div>
+</Section>
+
+<style>
+	.feedback-header {
+		text-align: center;
+		max-width: 80rem;
+		margin-inline: auto;
+		margin-bottom: 4.8rem;
+	}
+
+	.feedback-badge {
+		display: inline-block;
+		font-size: 1.2rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		padding: 0.5rem 1.6rem;
+		background: rgba(30, 86, 160, 0.08);
+		border: 1px solid rgba(30, 86, 160, 0.2);
+		border-radius: 9999px;
+		color: var(--color-primary);
+		margin-bottom: 1.2rem;
+	}
+
+	.feedback-title {
+		font-size: clamp(2.8rem, calc(2.4rem + 1.2vw), 4rem);
+		font-weight: 700;
+		line-height: 1.2;
+		color: #1a202c;
+		margin: 0 0 1.2rem;
+	}
+
+	.feedback-subtitle {
+		font-size: clamp(1.5rem, calc(1.4rem + 0.3vw), 1.8rem);
+		color: #4a5568;
+		line-height: 1.6;
+		margin: 0 0 2.4rem;
+	}
+
+	.feedback-metrics-strip {
+		display: inline-flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 1.6rem;
+		background: #ffffff;
+		padding: 1.2rem 2.4rem;
+		border-radius: 9999px;
+		border: 1px solid #e2e8f0;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+	}
+
+	.metric-pill {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+		font-size: 1.35rem;
+		color: #4a5568;
+
+		strong {
+			color: var(--color-primary);
+			font-size: 1.6rem;
+			font-weight: 700;
+		}
+
+		&:not(:last-child)::after {
+			content: "•";
+			color: #cbd5e1;
+			margin-left: 0.8rem;
+		}
+	}
+
+	.feedback-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2.4rem;
+
+		@media screen and (max-width: 1024px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media screen and (max-width: 680px) {
+			grid-template-columns: 1fr;
+			gap: 1.6rem;
+		}
+	}
+
+	.feedback-card {
+		background: #ffffff;
+		border: 1px solid #e2e8f0;
+		border-radius: 2rem;
+		padding: 3rem 2.4rem;
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+		transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+		&:hover {
+			transform: translateY(-4px);
+			border-color: var(--color-primary);
+			box-shadow: 0 12px 28px rgba(30, 86, 160, 0.1);
+		}
+	}
+
+	.feedback-card__meta {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-bottom: 1.8rem;
+	}
+
+	.rating-stars {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3rem;
+		color: #f59e0b;
+		font-size: 1.6rem;
+	}
+
+	.recovery-badge {
+		font-size: 1.15rem;
+		font-weight: 600;
+		color: #047857;
+		background: #d1fae5;
+		padding: 0.3rem 1rem;
+		border-radius: 9999px;
+	}
+
+	.feedback-quote {
+		font-size: 1.5rem;
+		line-height: 1.65;
+		color: #2d3748;
+		font-style: italic;
+		margin: 0 0 2.4rem;
+		flex-grow: 1;
+	}
+
+	.feedback-author {
+		display: flex;
+		align-items: center;
+		gap: 1.4rem;
+		padding-top: 1.8rem;
+		border-top: 1px solid #f1f5f9;
+	}
+
+	.author-avatar {
+		width: 4.4rem;
+		height: 4.4rem;
+		border-radius: 50%;
+		background: linear-gradient(135deg, #1e56a0, #0d3b66);
+		color: #ffffff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 700;
+		font-size: 1.8rem;
+		flex-shrink: 0;
+	}
+
+	.author-info {
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+	}
+
+	.author-name {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #1a202c;
+	}
+
+	.treatment-tag {
+		font-size: 1.25rem;
+		color: #64748b;
+	}
+
+	.feedback-outcome {
+		margin-top: 1.6rem;
+		padding: 1rem 1.4rem;
+		background: #f8fafc;
+		border-radius: 1rem;
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+		font-size: 1.3rem;
+		color: #334155;
+
+		.outcome-icon {
+			color: #10b981;
+			font-size: 1.6rem;
+			flex-shrink: 0;
+		}
+
+		strong {
+			color: #0f172a;
+		}
+	}
+</style>

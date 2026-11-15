@@ -1,0 +1,182 @@
+{
+	"pageTitle": "Pediatrics & Child Health | CareFirst Clinic",
+	"slug": "pediatric",
+	"sections": {
+		"hero": {
+			"config": {
+				"class": "section--hero",
+				"background": "bg-1",
+				"container": "flex"
+			},
+			"title": "Gentle, Compassionate <strong>Pediatric Care</strong>",
+			"subtitle": "Dedicated healthcare from newborn infancy through adolescence, prioritizing your child's physical growth, emotional comfort, and lifelong wellness.",
+			"image": "pediatric-hero.webp",
+			"buttons": [
+				{
+					"text": "Book Consultation",
+					"variant": "solid",
+					"color": "primary",
+					"url": "/appointment"
+				},
+				{
+					"text": "Meet Pediatricians",
+					"variant": "outline",
+					"color": "primary",
+					"url": "/doctors"
+				}
+			]
+		},
+		"statistics": {
+			"config": {
+				"variant": "department",
+				"background": "bg-1",
+				"header": {
+					"badge": "Pediatric Milestones",
+					"title": "Trusted by Generations of Families"
+				}
+			},
+			"data": [
+				{
+					"amount": "25k+",
+					"caption": "Happy Children Treated"
+				},
+				{
+					"amount": "0 min",
+					"caption": "Emergency Triage Wait"
+				},
+				{
+					"amount": "100%",
+					"caption": "Child-Friendly Environment"
+				},
+				{
+					"amount": "15+",
+					"caption": "Pediatric Subspecialties"
+				}
+			]
+		},
+		"areas": {
+			"config": {
+				"background": "bg-2"
+			},
+			"sectionHeader": {
+				"title": "Pediatric Specialties & Programs",
+				"subtitle": "Specialized health tracking and acute medical attention designed for young patients."
+			},
+			"items": [
+				{
+					"title": "Well-Child Checkups",
+					"text": "Routine developmental milestone tracking, growth charts, and preventive health reviews.",
+					"icon": "face"
+				},
+				{
+					"title": "Childhood Immunizations",
+					"text": "Complete recommended vaccination schedules delivered in a gentle, child-friendly environment.",
+					"icon": "safety"
+				},
+				{
+					"title": "Pediatric Acute Care",
+					"text": "Prompt evaluation and treatment of fevers, ear infections, respiratory issues, and rashes.",
+					"icon": "stetoscope"
+				},
+				{
+					"title": "Child Nutrition & Growth",
+					"text": "Personalized feeding and diet plans addressing allergies, growth concerns, and healthy habits.",
+					"icon": "care"
+				},
+				{
+					"title": "Pediatric Asthma & Allergies",
+					"text": "Careful diagnostic testing and comprehensive management of childhood breathing difficulties.",
+					"icon": "care"
+				},
+				{
+					"title": "Adolescent Health Support",
+					"text": "Confidential guidance for teenage development, mental health screening, and sports physicals.",
+					"icon": "safety"
+				}
+			]
+		},
+		"whyChooseUs": {
+			"badge": "Why CareFirst Pediatrics",
+			"title": "Why Families Choose Our <strong>Pediatric Wing</strong>",
+			"subtitle": "We have designed every aspect of our pediatric department to put anxious children at ease while giving parents absolute clinical confidence.",
+			"items": [
+				{
+					"icon": "face",
+					"title": "Warm, Child-Centered Doctors",
+					"text": "Compassionate pediatricians trained in child psychology, communication, and tear-free examinations.",
+					"highlight": "Tear-Free Visits"
+				},
+				{
+					"icon": "clock",
+					"title": "Same-Day Sick Child Appointments",
+					"text": "Priority scheduling and zero-wait triage whenever your child experiences an unexpected fever, earache, or cough.",
+					"highlight": "Immediate Care"
+				},
+				{
+					"icon": "safety",
+					"title": "Safe Immunization & Growth Tracking",
+					"text": "Pain-minimized vaccine schedules, developmental milestones monitoring, and proactive nutritional counseling.",
+					"highlight": "Complete Wellness"
+				},
+				{
+					"icon": "care",
+					"title": "Dedicated Child-Friendly Clinic",
+					"text": "Bright, colorful exam rooms with interactive distraction zones that replace fear of hospitals with comforting smiles.",
+					"highlight": "Family Comfort"
+				}
+			]
+		},
+
+		"patientFeedback": {
+			"badge": "Parent & Child Feedback",
+			"title": "What Parents <strong>Share After Treatment</strong>",
+			"subtitle": "Heartfelt reviews and recovery feedback from parents who brought their children to CareFirst Clinic.",
+			"metrics": [
+				{ "value": "99.2%", "label": "Parent Satisfaction" },
+				{ "value": "5.0/5", "label": "Gentle Care Score" },
+				{ "value": "5,000+", "label": "Smiles Protected" }
+			],
+			"items": [
+				{
+					"name": "Simran Gill",
+					"stage": "Post-Acute Illness Follow-Up",
+					"treatment": "Severe Pediatric Bronchitis Care",
+					"rating": 5,
+					"quote": "My 3-year-old daughter woke up struggling to breathe with severe wheezing. We rushed to CareFirst, and the pediatric triage attended to her within 2 minutes. The nebulizer therapy and gentle manner of Dr. Cruz calmed both my terrified child and me. By next morning she was playing happily again.",
+					"outcome": "Full Respiratory Recovery • Zero Hospitalization Trauma"
+				},
+				{
+					"name": "Rohan & Neha Mehra",
+					"stage": "Developmental & Vaccine Program",
+					"treatment": "Toddler Growth & Painless Vaccination",
+					"rating": 5,
+					"quote": "Our son used to scream at the sight of white coats. CareFirst pediatricians use distraction techniques and painless needles so seamlessly that our son didn't even notice his booster shots. They track his growth percentiles thoroughly at every visit.",
+					"outcome": "Happy Regular Checkups • All Milestones On Track"
+				},
+				{
+					"name": "Deepika Joshi",
+					"stage": "Post-Allergy Management",
+					"treatment": "Childhood Asthma & Eczema Protocol",
+					"rating": 5,
+					"quote": "The pediatric allergy testing finally solved our daughter's chronic skin flares and coughing fits. With their personalized environmental plan and child-safe medication, she has slept through the night for 8 months straight.",
+					"outcome": "Clear Skin • Restful Sleep & Active Sports Participation"
+				}
+			]
+		},
+		"cta": {
+			"config": {
+				"class": "section--centered"
+			},
+			"title": "Prioritize Your Child's Health Today",
+			"text": "Schedule a pediatric wellness visit or consultation with our caring medical team.",
+			"buttons": [
+				{
+					"text": "Book Appointment",
+					"variant": "solid",
+					"color": "white",
+					"url": "/appointment"
+				}
+			]
+		}
+	}
+}

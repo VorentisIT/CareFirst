@@ -60,7 +60,7 @@
 					"text": "Advanced therapeutic solutions for migraines, stroke prevention, spine disorders, and central nervous system health.",
 					"tags": ["Digital EEG", "Nerve Conduction", "Headache Clinic"],
 					"link": {
-						"url": "/services",
+						"url": "/services/neurology",
 						"text": "Learn More",
 						"icon": "arrow-right"
 					}
@@ -73,7 +73,7 @@
 					"text": "Compassionate, gentle medical care for infants, children, and adolescents, from wellness exams to urgent pediatric care.",
 					"tags": ["Well-Child Checkups", "Immunizations", "Growth Tracking"],
 					"link": {
-						"url": "/services",
+						"url": "/services/pediatric",
 						"text": "Learn More",
 						"icon": "arrow-right"
 					}
@@ -86,7 +86,7 @@
 					"text": "Expert clinical care for joint arthritis, sports rehabilitation, spine wellness, and minimally invasive treatments.",
 					"tags": ["Joint Preservation", "Sports Rehab", "Spine Wellness"],
 					"link": {
-						"url": "/services",
+						"url": "/services/orthopedics",
 						"text": "Learn More",
 						"icon": "arrow-right"
 					}
@@ -99,7 +99,7 @@
 					"text": "High-definition 3T MRI, low-dose 128-slice CT scans, and high-frequency ultrasound for pinpoint internal diagnosis.",
 					"tags": ["3T Digital MRI", "Low-Dose CT", "4D Ultrasound"],
 					"link": {
-						"url": "/services",
+						"url": "/services/radiology",
 						"text": "Learn More",
 						"icon": "arrow-right"
 					}
@@ -113,7 +113,7 @@
 					"text": "Precision clinical chemistry, hematology, and rapid infectious disease panels utilizing next-generation automated robotic analyzers.",
 					"tags": ["Metabolic Panels", "PCR Testing", "Lipid & Thyroid", "Walk-Ins Welcome"],
 					"link": {
-						"url": "/services",
+						"url": "/services/laboratory",
 						"text": "Schedule Test",
 						"icon": "arrow-right"
 					}

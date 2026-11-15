@@ -1,5 +1,5 @@
 {
-	"pageTitle": "Cerdiology service",
+	"pageTitle": "Cardiology Services | CareFirst Clinic",
 	"slug": "cardiology",
 	"sections": {
 		"hero": {
@@ -8,9 +8,9 @@
 				"background": "bg-1",
 				"container": "flex"
 			},
-			"title": "Advanced <strong>Cardiology</strong> Services",
-			"subtitle": "World-class heart care blending cutting-edge clinical technology with compassionate, patient-centered healing environments.",
-			"image": "hero-image.webp",
+			"title": "Advanced <strong>Cardiology</strong> & Heart Care",
+			"subtitle": "World-class cardiovascular care blending cutting-edge clinical technology with compassionate, patient-centered healing environments.",
+			"image": "cardiology-hero.webp",
 			"buttons": [
 				{
 					"text": "Book Consultation",
@@ -19,10 +19,38 @@
 					"url": "/appointment"
 				},
 				{
-					"text": "Meet Our Doctors",
+					"text": "Meet Cardiologists",
 					"variant": "outline",
 					"color": "primary",
 					"url": "/doctors"
+				}
+			]
+		},
+		"statistics": {
+			"config": {
+				"variant": "department",
+				"background": "bg-1",
+				"header": {
+					"badge": "Cardiology Milestones",
+					"title": "Proven Cardiac Care & Diagnostic Excellence"
+				}
+			},
+			"data": [
+				{
+					"amount": "15k+",
+					"caption": "Cardiac Procedures"
+				},
+				{
+					"amount": "99.4%",
+					"caption": "Diagnostic Precision"
+				},
+				{
+					"amount": "24/7",
+					"caption": "Emergency Response"
+				},
+				{
+					"amount": "4",
+					"caption": "Dedicated Cath Labs"
 				}
 			]
 		},
@@ -68,43 +96,71 @@
 			]
 		},
 
-		"testimonials": {
-			"config": {
-				"class": "section--centered",
-				"background": "bg-1"
-			},
-			"sectionHeader": {
-				"title": "Patient Testimonials",
-				"subtitle": "Real stories from our patients who chose CareFirst Clinic cardiology service."
-			},
+		"whyChooseUs": {
+			"badge": "Why CareFirst Cardiology",
+			"title": "Why Patients Choose Our <strong>Cardiology Center</strong>",
+			"subtitle": "From preventive screenings to advanced interventional procedures, here is why patients across the region trust CareFirst with their heart health.",
 			"items": [
 				{
-					"quote": "The doctors listened carefully, made me feel safe, and guided me through every step of treatment.",
-					"name": "Kimberly Overbay",
-					"role": "Patient",
-					"photo": "/images/testimonials/patient-1.jpg",
-					"rating": 5
+					"icon": "cardio",
+					"title": "Board-Certified Cardiologists",
+					"text": "Decades of combined clinical excellence across electrophysiology, interventional catheterization, and heart failure management.",
+					"highlight": "Top 1% Specialists"
 				},
 				{
-					"quote": "Thanks to the team, I received fast and compassionate care that made a real difference.",
-					"name": "Joseph Murphy",
-					"role": "Patient",
-					"photo": "/images/testimonials/patient-2.jpg",
-					"rating": 4
+					"icon": "microscope",
+					"title": "Ultra-Low Radiation Diagnostics",
+					"text": "3D echocardiography, high-speed coronary CT, and modern telemetry ensuring precise detection with minimal radiation exposure.",
+					"highlight": "State-of-the-Art Tech"
 				},
 				{
-					"quote": "The clinic was modern, the staff were professional, and they took the time to explain everything clearly.",
-					"name": "Gloria McNeill",
-					"role": "Patient",
-					"photo": "/images/testimonials/patient-3.jpg",
-					"rating": 5
+					"icon": "clock",
+					"title": "Zero-Wait Emergency Triage",
+					"text": "Dedicated 24/7 chest pain protocol and acute cardiac emergency team ready to intervene within minutes of hospital arrival.",
+					"highlight": "24/7 Rapid Response"
 				},
 				{
-					"quote": "I felt supported from first appointment to recovery thanks to their compassionate team.",
-					"name": "Melissa Corrigan",
-					"role": "Patient",
-					"photo": "/images/testimonials/patient-3.jpg",
-					"rating": 5
+					"icon": "care",
+					"title": "Complete Cardiac Rehabilitation",
+					"text": "Supervised lifestyle and cardiovascular recovery regimens designed to safely restore heart endurance and long-term vitality.",
+					"highlight": "Holistic Healing"
+				}
+			]
+		},
+
+		"patientFeedback": {
+			"badge": "Post-Treatment Feedback",
+			"title": "What Our Heart Patients <strong>Say After Treatment</strong>",
+			"subtitle": "Real recovery feedback from individuals who received life-changing cardiac care at CareFirst Clinic.",
+			"metrics": [
+				{ "value": "99.4%", "label": "Procedure Success" },
+				{ "value": "4.9/5", "label": "Patient Rating" },
+				{ "value": "2,400+", "label": "Hearts Restored" }
+			],
+			"items": [
+				{
+					"name": "Harish Chopra",
+					"stage": "6-Month Post-Angioplasty",
+					"treatment": "Coronary Stenting & Rehab",
+					"rating": 5,
+					"quote": "I arrived at CareFirst with severe chest tightness. The cardiology team performed an angiogram immediately and placed two stents. Within 48 hours I felt like a new person. Six months later, I am walking 5 km every morning without any pain.",
+					"outcome": "100% Stamina Restored • Regular Normal ECG"
+				},
+				{
+					"name": "Kavita Singhal",
+					"stage": "Post-Arrhythmia Treatment",
+					"treatment": "Cardiac Electrophysiology",
+					"rating": 5,
+					"quote": "I had been suffering from frightening heart palpitations for over two years. Other clinics dismissed it as anxiety, but Dr. Chen pinpointed the arrhythmia in our first 3D mapping session. The procedure was smooth and completely resolved my episodes.",
+					"outcome": "Zero Palpitation Episodes • Off Beta Blockers"
+				},
+				{
+					"name": "Amitabh Bose",
+					"stage": "Preventive Care Program",
+					"treatment": "Executive Lipid & Heart Screening",
+					"rating": 5,
+					"quote": "The preventive heart checkup caught high calcium scoring before any heart attack could happen. The team put me on an aggressive lifestyle and medication plan that lowered my risk factors drastically. Truly lifesaving care.",
+					"outcome": "Cholesterol & BP Normalized • Healthy Active Lifestyle"
 				}
 			]
 		},

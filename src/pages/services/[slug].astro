@@ -2,7 +2,10 @@
 import "../../styles/global.css";
 import Layout from "@layouts/Layout.astro";
 import HeroSection from "@/components/blocks/HeroSection.astro";
+import StatisticsSection from "@/components/blocks/StatisticsSection.astro";
 import ServicesSection from "@/components/blocks/ServicesSection.astro";
+import WhyServiceSection from "@/components/blocks/WhyServiceSection.astro";
+import PatientFeedbackSection from "@/components/blocks/PatientFeedbackSection.astro";
 import TestimonialsSection from "@/components/blocks/TestimonialsSection.astro";
 import CtaSection from "@/components/blocks/CtaSection.astro";
 import TechologySection from "@/components/blocks/TechologySection.astro";
@@ -31,9 +34,24 @@ const { service } = Astro.props;
 	description={`${service.pageTitle} at CareFirst Clinic. Specialized diagnostics, consultations, and personalized care.`}
 >
 	{service.sections.hero && <HeroSection data={service.sections.hero} />}
+	{
+		service.sections.statistics && (
+			<StatisticsSection data={service.sections.statistics} />
+		)
+	}
 	{service.sections.areas && <ServicesSection data={service.sections.areas} />}
 	{
-		service.sections.testimonials && (
+		service.sections.whyChooseUs && (
+			<WhyServiceSection data={service.sections.whyChooseUs} />
+		)
+	}
+	{
+		service.sections.patientFeedback && (
+			<PatientFeedbackSection data={service.sections.patientFeedback} />
+		)
+	}
+	{
+		!service.sections.patientFeedback && service.sections.testimonials && (
 			<TestimonialsSection data={service.sections.testimonials} />
 		)
 	}

@@ -1,0 +1,220 @@
+{
+	"slug": "laboratory",
+	"pageTitle": "Diagnostic Pathology & Clinical Laboratory | CareFirst Clinic",
+	"sections": {
+		"hero": {
+			"config": {
+				"class": "section--hero",
+				"background": "bg-1",
+				"container": "flex"
+			},
+			"title": "Advanced <strong>Pathology & Diagnostic Laboratory</strong>",
+			"subtitle": "Certified high-throughput laboratory delivering rapid, ultra-precise clinical biochemistry, hematology, immunology, and molecular testing. 99.8% precision with same-day digital reporting.",
+			"image": "laboratory-hero.webp",
+			"buttons": [
+				{
+					"text": "Book a Lab Test",
+					"variant": "solid",
+					"color": "primary",
+					"url": "/appointment"
+				},
+				{
+					"text": "Contact Pathology Desk",
+					"variant": "outline",
+					"color": "primary",
+					"url": "/contact"
+				}
+			]
+		},
+		"statistics": {
+			"config": {
+				"variant": "department",
+				"background": "bg-1",
+				"header": {
+					"badge": "Laboratory Milestones",
+					"title": "Robotic Automation & Rapid Clinical Diagnostics"
+				}
+			},
+			"data": [
+				{
+					"amount": "250k+",
+					"caption": "Diagnostic Tests Analyzed"
+				},
+				{
+					"amount": "99.9%",
+					"caption": "Quality Assurance Score"
+				},
+				{
+					"amount": "4 Hours",
+					"caption": "Rapid Turnaround Time"
+				},
+				{
+					"amount": "ISO 15189",
+					"caption": "Accredited Testing Facility"
+				}
+			]
+		},
+		"areas": {
+			"config": {
+				"class": "section--centered",
+				"background": "bg-2"
+			},
+			"sectionHeader": {
+				"title": "Laboratory & Diagnostic Specialties",
+				"subtitle": "Automated, barcoded diagnostic workflows ensuring zero-contamination and rapid diagnostic turnaround times."
+			},
+			"items": [
+				{
+					"title": "Comprehensive Biochemistry",
+					"text": "Automated serum chemistry profiles including liver function tests (LFT), kidney function tests (KFT), lipid panels, and electrolyte evaluations.",
+					"icon": "farma",
+					"link": {
+						"url": "/appointment",
+						"text": "Book Test",
+						"icon": "arrow-right"
+					}
+				},
+				{
+					"title": "Clinical Hematology & Coagulation",
+					"text": "Advanced 5-part differential blood counts, hemoglobin electrophoresis, ESR, and complete coagulation profiles (PT/INR, APTT).",
+					"icon": "safety",
+					"link": {
+						"url": "/appointment",
+						"text": "Book Test",
+						"icon": "arrow-right"
+					}
+				},
+				{
+					"title": "Immunology & Endocrine Panels",
+					"text": "High-sensitivity chemiluminescent assays for thyroid hormones (T3, T4, TSH), vitamin D, vitamin B12, fertility profiles, and tumor markers.",
+					"icon": "care",
+					"link": {
+						"url": "/appointment",
+						"text": "Book Test",
+						"icon": "arrow-right"
+					}
+				},
+				{
+					"title": "Microbiology & Infectious Diseases",
+					"text": "Automated blood cultures, bacterial antibiotic susceptibility testing, fungal staining, and rapid pathogen detection systems.",
+					"icon": "farma",
+					"link": {
+						"url": "/appointment",
+						"text": "Book Test",
+						"icon": "arrow-right"
+					}
+				},
+				{
+					"title": "Molecular Diagnostics & PCR",
+					"text": "Real-time RT-PCR technology for viral load quantification, respiratory pathogen panels, and genetic risk screenings.",
+					"icon": "safety",
+					"link": {
+						"url": "/appointment",
+						"text": "Book Test",
+						"icon": "arrow-right"
+					}
+				},
+				{
+					"title": "Preventive Executive Health Packages",
+					"text": "Comprehensive 75+ parameter full-body screening panels tailored for early detection of lifestyle disorders, diabetes, and cardiovascular risk.",
+					"icon": "care",
+					"link": {
+						"url": "/appointment",
+						"text": "Book Test",
+						"icon": "arrow-right"
+					}
+				}
+			]
+		},
+		"whyChooseUs": {
+			"badge": "Why CareFirst Laboratory",
+			"title": "Why Patients & Doctors Choose Our <strong>Pathology Center</strong>",
+			"subtitle": "Clinical decisions demand uncompromising accuracy. Our accredited facility pairs robotic automation with meticulous certified pathologist oversight.",
+			"items": [
+				{
+					"icon": "farma",
+					"title": "Fully Automated Analyzers",
+					"text": "Barcoded, closed-tube robotic testing systems that eliminate human pipetting error and sample cross-contamination.",
+					"highlight": "Zero Human Contamination"
+				},
+				{
+					"icon": "safety",
+					"title": "ISO 15189 Quality Accredited",
+					"text": "Rigorous daily multi-level quality controls and international external quality assurance (EQAS) validations.",
+					"highlight": "Gold-Standard QA"
+				},
+				{
+					"icon": "clock",
+					"title": "Ultra-Fast Digital Turnaround",
+					"text": "Routine biochemistry and hematology reports verified and delivered securely via WhatsApp & portal in under 4 hours.",
+					"highlight": "4-Hour Reports"
+				},
+				{
+					"icon": "care",
+					"title": "Gentle, Painless Phlebotomy",
+					"text": "Micro-gauge butterfly needles and highly trained phlebotomists ensuring smooth, painless blood draw for adults & kids.",
+					"highlight": "Painless Blood Draw"
+				}
+			]
+		},
+
+		"patientFeedback": {
+			"badge": "Post-Test Patient Feedback",
+			"title": "What Patients <strong>Share After Lab Testing</strong>",
+			"subtitle": "Feedback from individuals and families who completed blood tests and health checkups with us.",
+			"metrics": [
+				{ "value": "99.9%", "label": "Accuracy Rating" },
+				{ "value": "4.9/5", "label": "Hygiene Score" },
+				{ "value": "< 4 Hrs", "label": "Fast Delivery" }
+			],
+			"items": [
+				{
+					"name": "Karan Malhotra",
+					"stage": "Comprehensive Health Screening",
+					"treatment": "75+ Parameter Executive Wellness Panel",
+					"rating": 5,
+					"quote": "Got my annual full-body checkup done at CareFirst. The blood sample collection with the butterfly needle was completely painless—I didn't feel a prick. All 12 specialized reports arrived on my phone within 4 hours, neatly flagged with doctor explanations.",
+					"outcome": "Prompt Preventive Insights • Fast Digital Delivery"
+				},
+				{
+					"name": "Sonia Verma",
+					"stage": "Endocrine Testing Follow-Up",
+					"treatment": "High-Sensitivity Thyroid & Vitamin Panel",
+					"rating": 5,
+					"quote": "The laboratory staff is extraordinarily clean, wearing fresh gloves and sanitized equipment for every patient. Their accurate automated thyroid readings gave my endocrinologist the exact precision needed to calibrate my medication after months of guesswork.",
+					"outcome": "Accurate Hormonal Readings • Medication Optimized"
+				},
+				{
+					"name": "Rajesh Kapoor",
+					"stage": "Home Sample Collection",
+					"treatment": "Senior Diabetic & Lipid Monitoring",
+					"rating": 5,
+					"quote": "Booked an early morning home sample collection for my elderly mother. The phlebotomist arrived right on time at 7:00 AM, in clean scrubs and masked. He was gentle and courteous, and reports were ready by lunchtime.",
+					"outcome": "Stress-Free Home Collection • Accurate Fast Results"
+				}
+			]
+		},
+		"cta": {
+			"config": {
+				"class": "section--centered",
+				"background": "bg-2"
+			},
+			"title": "Need a Diagnostic Blood Test or Health Package?",
+			"text": "Walk in directly to our diagnostic center or book a painless home sample collection appointment with our certified phlebotomists.",
+			"buttons": [
+				{
+					"text": "Schedule Lab Test",
+					"variant": "solid",
+					"color": "white",
+					"url": "/appointment"
+				},
+				{
+					"text": "Call Lab Desk",
+					"variant": "outline",
+					"color": "white",
+					"url": "tel:+919876543210"
+				}
+			]
+		}
+	}
+}

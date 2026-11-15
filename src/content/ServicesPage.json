@@ -72,7 +72,7 @@
 					"text": "Expert care for musculoskeletal injuries, joint health, and spinal conditions, from physical therapy to minimally invasive surgery.",
 					"icon": "spine",
 					"link": {
-						"url": "/services/ortho",
+						"url": "/services/orthopedics",
 						"text": "View Department",
 						"icon": "arrow-right"
 					}
@@ -92,7 +92,7 @@
 					"text": "State-of-the-art medical imaging services including MRI, CT scans, digital X-rays, and ultrasound for precise internal diagnosis.",
 					"icon": "bones",
 					"link": {
-						"url": "/services/laboratory",
+						"url": "/services/radiology",
 						"text": "View Department",
 						"icon": "arrow-right"
 					}

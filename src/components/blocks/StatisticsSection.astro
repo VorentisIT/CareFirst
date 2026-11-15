@@ -8,13 +8,23 @@ interface Props {
 const {
 	data: { ...props },
 } = Astro.props;
+
+const isDepartment = props.config?.variant === "department";
 ---
 
-<Section class="section--primary" background={props.config.background}>
-	<div class="statistics">
+<Section class={`section--primary ${isDepartment ? 'statistics-section--department' : ''}`} background={props.config?.background}>
+	{
+		isDepartment && props.config?.header && (
+			<div class="department-stat-header">
+				<span class="stat-badge">{props.config.header.badge || "Clinical Milestones"}</span>
+				{props.config.header.title && <h2 class="stat-heading">{props.config.header.title}</h2>}
+			</div>
+		)
+	}
+	<div class={`statistics ${isDepartment ? 'statistics--cards' : ''}`}>
 		{
 			props.data.map((item: any) => (
-				<div class="stat-item">
+				<div class={`stat-item ${isDepartment ? 'stat-item--card' : ''}`}>
 					<span class="stat-amount">{item.amount}</span>
 					<span class="stat-caption">{item.caption}</span>
 				</div>
@@ -49,10 +59,81 @@ const {
 		font-weight: 700;
 		line-height: 1.1;
 		color: var(--color-white);
+		letter-spacing: -0.02em;
 	}
 
 	.stat-caption {
 		font-size: clamp(1.4rem, calc(1.318rem + 0.409vw), 1.8rem);
-		color: var(--color-white);
+		color: rgba(255, 255, 255, 0.92);
+		font-weight: 500;
+	}
+
+	/* Department Variant - "Little Different" Carded Design */
+	:global(.statistics-section--department) {
+		padding-block: clamp(3.2rem, 3.5vw, 4.4rem) !important;
+	}
+
+	.department-stat-header {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.stat-badge {
+		display: inline-block;
+		font-size: 1.2rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		padding: 0.4rem 1.4rem;
+		background: rgba(255, 255, 255, 0.18);
+		border: 1px solid rgba(255, 255, 255, 0.28);
+		border-radius: 9999px;
+		color: #ffffff;
+		margin-bottom: 0.8rem;
+	}
+
+	.stat-heading {
+		font-size: clamp(2rem, calc(1.8rem + 0.8vw), 2.8rem);
+		font-weight: 700;
+		color: #ffffff;
+		margin: 0;
+	}
+
+	.statistics--cards {
+		gap: 2rem;
+
+		@media screen and (max-width: 640px) {
+			gap: 1.2rem;
+		}
+	}
+
+	.stat-item--card {
+		background: rgba(255, 255, 255, 0.10);
+		border: 1px solid rgba(255, 255, 255, 0.20);
+		border-radius: 1.6rem;
+		padding: 2.8rem 1.6rem;
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+		transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+
+		&:hover {
+			transform: translateY(-3px);
+			background: rgba(255, 255, 255, 0.15);
+			box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+		}
+
+		.stat-amount {
+			color: #ffffff;
+			text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+		}
+
+		.stat-caption {
+			color: rgba(255, 255, 255, 0.95);
+		}
+
+		@media screen and (max-width: 640px) {
+			padding: 2rem 1.2rem;
+		}
 	}
 </style>

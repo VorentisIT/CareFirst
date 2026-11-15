@@ -1,0 +1,182 @@
+{
+	"pageTitle": "Radiology & Diagnostic Imaging | CareFirst Clinic",
+	"slug": "radiology",
+	"sections": {
+		"hero": {
+			"config": {
+				"class": "section--hero",
+				"background": "bg-1",
+				"container": "flex"
+			},
+			"title": "Precision <strong>Radiology & Imaging</strong> Center",
+			"subtitle": "State-of-the-art diagnostic medical imaging including ultra-high-field 3T MRI, low-dose 128-slice CT scans, and 4D ultrasound for accurate, rapid internal diagnosis.",
+			"image": "radiology-hero.webp",
+			"buttons": [
+				{
+					"text": "Schedule Imaging",
+					"variant": "solid",
+					"color": "primary",
+					"url": "/appointment"
+				},
+				{
+					"text": "Our Diagnostic Technology",
+					"variant": "outline",
+					"color": "primary",
+					"url": "/about"
+				}
+			]
+		},
+		"statistics": {
+			"config": {
+				"variant": "department",
+				"background": "bg-1",
+				"header": {
+					"badge": "Radiology Milestones",
+					"title": "Ultra-Clear Diagnostic Clarity & Fast Turnaround"
+				}
+			},
+			"data": [
+				{
+					"amount": "80k+",
+					"caption": "Digital Scans Performed"
+				},
+				{
+					"amount": "Same-Day",
+					"caption": "Verified Radiologist Reports"
+				},
+				{
+					"amount": "3T MRI",
+					"caption": "High-Definition Neuro & Body Scans"
+				},
+				{
+					"amount": "Low-Dose",
+					"caption": "Radiation Protection Protocols"
+				}
+			]
+		},
+		"areas": {
+			"config": {
+				"background": "bg-2"
+			},
+			"sectionHeader": {
+				"title": "Advanced Imaging Modalities",
+				"subtitle": "Precision diagnostic capabilities delivering rapid, high-resolution scans for confident clinical answers."
+			},
+			"items": [
+				{
+					"title": "High-Definition 3T MRI",
+					"text": "Ultra-sharp magnetic resonance imaging for neuro, spine, cardiac, and musculoskeletal diagnostics with reduced scan times.",
+					"icon": "bones"
+				},
+				{
+					"title": "Low-Dose 128-Slice CT",
+					"text": "Advanced multidetector CT offering rapid whole-body cross-sectional imaging with up to 80% lower radiation exposure.",
+					"icon": "safety"
+				},
+				{
+					"title": "Digital X-Ray & Fluoroscopy",
+					"text": "Instantaneous digital radiograms for immediate fracture verification and real-time gastrointestinal motility studies.",
+					"icon": "bones"
+				},
+				{
+					"title": "High-Frequency 4D Ultrasound",
+					"text": "Non-invasive vascular Doppler, obstetrics, abdominal, and soft tissue dynamic imaging.",
+					"icon": "cardio"
+				},
+				{
+					"title": "Digital Mammography",
+					"text": "High-sensitivity breast cancer screening with AI-assisted lesion detection and comfort-engineered compression.",
+					"icon": "care"
+				},
+				{
+					"title": "Image-Guided Interventions",
+					"text": "Precision ultrasound and CT-guided joint aspirations, biopsies, and therapeutic nerve blocks.",
+					"icon": "stetoscope"
+				}
+			]
+		},
+		"whyChooseUs": {
+			"badge": "Why CareFirst Radiology",
+			"title": "Why Patients Choose Our <strong>Imaging Center</strong>",
+			"subtitle": "Accurate medical treatments always begin with flawless diagnostic visibility. Here is why physicians and patients rely on our digital scanners.",
+			"items": [
+				{
+					"icon": "bones",
+					"title": "Ultra-High-Field 3T MRI & 128-Slice CT",
+					"text": "Sub-millimeter anatomical detail enabling early, confident detection of vascular, neural, and musculoskeletal issues.",
+					"highlight": "Microscopic Detail"
+				},
+				{
+					"icon": "safety",
+					"title": "Low-Dose Radiation Protection",
+					"text": "Next-generation dose-modulation algorithms delivering up to 70% lower radiation exposure compared to legacy scanners.",
+					"highlight": "Maximum Safety"
+				},
+				{
+					"icon": "clock",
+					"title": "Same-Day Verified Reporting",
+					"text": "Immediate digital access to your DICOM scans and verified specialist radiologist interpretation within 3 to 4 hours.",
+					"highlight": "Rapid Turnaround"
+				},
+				{
+					"icon": "care",
+					"title": "Claustrophobia-Free Comfort",
+					"text": "Wide-bore, whisper-quiet MRI design with ambient mood lighting, headrest music, and attentive technologist guidance.",
+					"highlight": "Stress-Free Scans"
+				}
+			]
+		},
+
+		"patientFeedback": {
+			"badge": "Post-Scan Patient Feedback",
+			"title": "What Our Imaging Patients <strong>Say After Their Scans</strong>",
+			"subtitle": "Real experiences and feedback from patients who completed their MRI, CT, and ultrasound scans with us.",
+			"metrics": [
+				{ "value": "99.8%", "label": "Diagnostic Accuracy" },
+				{ "value": "3-4 Hrs", "label": "Average Report Time" },
+				{ "value": "4.9/5", "label": "Comfort Rating" }
+			],
+			"items": [
+				{
+					"name": "Angela Davis",
+					"stage": "Post-MRI Diagnostic Feedback",
+					"treatment": "High-Definition 3T Brain MRI",
+					"rating": 5,
+					"quote": "I have severe claustrophobia and had panicked inside older MRI machines twice before. The wide-bore scanner and calming guidance of the CareFirst technologist made the entire 25-minute brain scan completely manageable and calm. The digital report was sent to my neurologist the very same afternoon.",
+					"outcome": "Painless Claustrophobia-Free Scan • Clear Clinical Answers"
+				},
+				{
+					"name": "Gary Mitchell",
+					"stage": "Same-Day CT Diagnostic",
+					"treatment": "Low-Dose Chest & Abdominal CT",
+					"rating": 5,
+					"quote": "My physician needed urgent abdomen imaging. CareFirst gave me a same-day slot, completed the CT scan in under 7 minutes, and the radiologist even explained the preliminary findings with utmost clarity. Flawless professional service.",
+					"outcome": "Rapid Same-Day Delivery • Enabled Timely Treatment"
+				},
+				{
+					"name": "Meera Tandon",
+					"stage": "Post-Musculoskeletal Imaging",
+					"treatment": "High-Resolution Joint Ultrasound & MRI",
+					"rating": 5,
+					"quote": "The clarity of their digital imaging caught a subtle tendon tear that had been missed on two prior X-rays elsewhere. Because of CareFirst's imaging accuracy, my orthopedic surgeon could perform targeted therapy right away.",
+					"outcome": "Pinpoint Diagnosis • Avoided Unnecessary Surgery"
+				}
+			]
+		},
+		"cta": {
+			"config": {
+				"class": "section--centered"
+			},
+			"title": "Need Diagnostic Medical Imaging?",
+			"text": "Book your same-day MRI, CT scan, or digital ultrasound with CareFirst imaging specialists.",
+			"buttons": [
+				{
+					"text": "Schedule Scan",
+					"variant": "solid",
+					"color": "white",
+					"url": "/appointment"
+				}
+			]
+		}
+	}
+}

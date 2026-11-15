@@ -1,0 +1,182 @@
+{
+	"pageTitle": "Orthopedics & Spine Care | CareFirst Clinic",
+	"slug": "ortho",
+	"sections": {
+		"hero": {
+			"config": {
+				"class": "section--hero",
+				"background": "bg-1",
+				"container": "flex"
+			},
+			"title": "Restorative <strong>Orthopedics & Spine</strong> Care",
+			"subtitle": "Pioneering musculoskeletal treatments, robotic joint preservation, and minimally invasive spinal surgery to eliminate pain and restore full active mobility.",
+			"image": "orthopedics-hero.webp",
+			"buttons": [
+				{
+					"text": "Book Consultation",
+					"variant": "solid",
+					"color": "primary",
+					"url": "/appointment"
+				},
+				{
+					"text": "Meet Orthopedic Surgeons",
+					"variant": "outline",
+					"color": "primary",
+					"url": "/doctors"
+				}
+			]
+		},
+		"statistics": {
+			"config": {
+				"variant": "department",
+				"background": "bg-1",
+				"header": {
+					"badge": "Orthopedic Milestones",
+					"title": "Restoring Pain-Free Mobility & Athletic Function"
+				}
+			},
+			"data": [
+				{
+					"amount": "12k+",
+					"caption": "Joint & Spine Procedures"
+				},
+				{
+					"amount": "98.2%",
+					"caption": "Mobility Recovery Rate"
+				},
+				{
+					"amount": "Robotic",
+					"caption": "Precision Joint Replacement"
+				},
+				{
+					"amount": "Dedicated",
+					"caption": "Sports Rehabilitation Center"
+				}
+			]
+		},
+		"areas": {
+			"config": {
+				"background": "bg-2"
+			},
+			"sectionHeader": {
+				"title": "Orthopedic & Spine Specialties",
+				"subtitle": "Advanced surgical and non-surgical solutions tailored to your joints, bones, and spine."
+			},
+			"items": [
+				{
+					"title": "Minimally Invasive Spine Surgery",
+					"text": "Targeted micro-discectomy and endoscopic spinal decompression for chronic nerve and back pain.",
+					"icon": "spine"
+				},
+				{
+					"title": "Joint Replacement & Preservation",
+					"text": "Robotic-assisted partial and total knee and hip replacements engineered for rapid recovery.",
+					"icon": "bones"
+				},
+				{
+					"title": "Sports Medicine & Arthroscopy",
+					"text": "State-of-the-art repair of rotator cuff tears, ACL reconstructions, and meniscus injuries.",
+					"icon": "safety"
+				},
+				{
+					"title": "Physical & Functional Rehabilitation",
+					"text": "Structured post-operative mobility protocols and certified physical therapy programs.",
+					"icon": "care"
+				},
+				{
+					"title": "Fracture & Orthopedic Trauma",
+					"text": "Immediate anatomical realignment, casting, and advanced surgical fixation for acute fractures.",
+					"icon": "bones"
+				},
+				{
+					"title": "Arthritis & Cartilage Care",
+					"text": "Regenerative biological injections and multi-modal arthritis therapies to preserve natural joints.",
+					"icon": "spine"
+				}
+			]
+		},
+		"whyChooseUs": {
+			"badge": "Why CareFirst Orthopedics",
+			"title": "Why Patients Choose Our <strong>Orthopedics & Spine Center</strong>",
+			"subtitle": "We believe joint preservation and minimally invasive solutions come first, helping you get back on your feet with rapid recovery protocols.",
+			"items": [
+				{
+					"icon": "spine",
+					"title": "Robotic Joint & Spine Precision",
+					"text": "Sub-millimeter surgical accuracy ensuring perfect implant alignment, minimal soft-tissue trauma, and faster recovery.",
+					"highlight": "Sub-Millimeter Accuracy"
+				},
+				{
+					"icon": "microscope",
+					"title": "Joint Preservation First",
+					"text": "Advanced biological therapies, platelet-rich plasma (PRP), and arthroscopic interventions to preserve your natural joints.",
+					"highlight": "Natural Preservation"
+				},
+				{
+					"icon": "clock",
+					"title": "Rapid Mobilization Pathways",
+					"text": "Patients walk safely within hours of routine joint surgery with modern multimodal anesthesia and dedicated physical therapy.",
+					"highlight": "Same-Day Mobilization"
+				},
+				{
+					"icon": "care",
+					"title": "Integrated Sports Rehabilitation",
+					"text": "On-site athletic rehab suites with motion analysis to guide return-to-sport and active daily life safely.",
+					"highlight": "End-to-End Rehab"
+				}
+			]
+		},
+
+		"patientFeedback": {
+			"badge": "Post-Treatment Feedback",
+			"title": "What Our Orthopedic Patients <strong>Say After Recovery</strong>",
+			"subtitle": "Real mobility outcomes and post-surgery reflections from patients who regained an active lifestyle.",
+			"metrics": [
+				{ "value": "98.2%", "label": "Mobility Restored" },
+				{ "value": "4.9/5", "label": "Patient Rating" },
+				{ "value": "3,100+", "label": "Joints Repaired" }
+			],
+			"items": [
+				{
+					"name": "Marcus Bennett",
+					"stage": "3-Month Post-Op Follow-Up",
+					"treatment": "Arthroscopic Meniscus Repair",
+					"rating": 5,
+					"quote": "After tearing my meniscus playing tennis, other doctors recommended months of immobilization. Dr. Wilson performed an arthroscopic repair with microscopic precision. I walked without crutches on day 3 and was back on the court in 10 weeks with zero knee swelling.",
+					"outcome": "100% Knee Flexion • Returned to Competitive Tennis"
+				},
+				{
+					"name": "Patricia Adams",
+					"stage": "6-Month Post-Spine Procedure",
+					"treatment": "Minimally Invasive Lumbar Decompression",
+					"rating": 5,
+					"quote": "I had unbearable sciatica shooting down my right leg for over a year. The minimally invasive spine decompression done through a tiny 1-inch incision relieved the nerve pressure immediately. I was discharged the next afternoon and have been completely pain-free ever since.",
+					"outcome": "Zero Sciatica Pain • Full Lumbar Flexibility Restored"
+				},
+				{
+					"name": "Gurdial Singh",
+					"stage": "1-Year Post-Joint Replacement",
+					"treatment": "Robotic-Assisted Total Knee Replacement",
+					"rating": 5,
+					"quote": "Severe osteoarthritis made it impossible for me to climb stairs or play with my grandchildren. CareFirst's robotic knee replacement gave me a natural-feeling knee that bends effortlessly. The physical therapy team walked beside me every single day.",
+					"outcome": "Stair Climbing Pain-Free • Daily 4-Mile Walks Resumed"
+				}
+			]
+		},
+		"cta": {
+			"config": {
+				"class": "section--centered"
+			},
+			"title": "Overcome Joint & Back Pain",
+			"text": "Schedule an evaluation with our board-certified orthopedic and spinal surgeons.",
+			"buttons": [
+				{
+					"text": "Book Appointment",
+					"variant": "solid",
+					"color": "white",
+					"url": "/appointment"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,182 @@
+{
+	"pageTitle": "Neurology & Brain Health | CareFirst Clinic",
+	"slug": "neurology",
+	"sections": {
+		"hero": {
+			"config": {
+				"class": "section--hero",
+				"background": "bg-1",
+				"container": "flex"
+			},
+			"title": "Advanced <strong>Neurology & Brain Health</strong> Services",
+			"subtitle": "Specialized diagnosis and evidence-based therapeutic treatments for disorders of the brain, spinal cord, and peripheral nervous system.",
+			"image": "neurology-hero.webp",
+			"buttons": [
+				{
+					"text": "Book Consultation",
+					"variant": "solid",
+					"color": "primary",
+					"url": "/appointment"
+				},
+				{
+					"text": "Meet Our Specialists",
+					"variant": "outline",
+					"color": "primary",
+					"url": "/doctors"
+				}
+			]
+		},
+		"statistics": {
+			"config": {
+				"variant": "department",
+				"background": "bg-1",
+				"header": {
+					"badge": "Neurology Milestones",
+					"title": "Pioneering Neurosciences & Stroke Recovery"
+				}
+			},
+			"data": [
+				{
+					"amount": "10k+",
+					"caption": "Neurology Patients"
+				},
+				{
+					"amount": "3T",
+					"caption": "High-Definition Neuro MRI"
+				},
+				{
+					"amount": "100%",
+					"caption": "Board-Certified Neurologists"
+				},
+				{
+					"amount": "24/7",
+					"caption": "Acute Stroke Response"
+				}
+			]
+		},
+		"areas": {
+			"config": {
+				"background": "bg-2"
+			},
+			"sectionHeader": {
+				"title": "Neurological Care Specialties",
+				"subtitle": "Comprehensive multidisciplinary treatments for complex neurovascular and cognitive disorders."
+			},
+			"items": [
+				{
+					"title": "Stroke Prevention & Care",
+					"text": "Rapid vascular risk screening, neuro-telemetry, and post-stroke rehabilitation protocols.",
+					"icon": "brain"
+				},
+				{
+					"title": "Epilepsy & Seizure Management",
+					"text": "Precision digital electroencephalography (EEG) monitoring and personalized anti-seizure therapies.",
+					"icon": "brain"
+				},
+				{
+					"title": "Headache & Migraine Clinic",
+					"text": "Targeted therapies, nerve blocks, and lifestyle interventions for debilitating chronic headaches.",
+					"icon": "head"
+				},
+				{
+					"title": "Memory & Cognitive Disorders",
+					"text": "Early dementia and Alzheimer's assessments with tailored cognitive preservation plans.",
+					"icon": "brain"
+				},
+				{
+					"title": "Neuromuscular & Neuropathy",
+					"text": "High-accuracy EMG and nerve conduction studies for diabetic neuropathy and muscle disorders.",
+					"icon": "safety"
+				},
+				{
+					"title": "Movement Disorders & Parkinson's",
+					"text": "Long-term functional mobility optimization and medication adjustment by neurological specialists.",
+					"icon": "brain"
+				}
+			]
+		},
+		"whyChooseUs": {
+			"badge": "Why CareFirst Neurology",
+			"title": "Why Patients Choose Our <strong>Neurology Center</strong>",
+			"subtitle": "Complex neurological conditions require precision diagnosis, rapid intervention, and empathetic ongoing management.",
+			"items": [
+				{
+					"icon": "brain",
+					"title": "Specialized Neuro-Subspecialists",
+					"text": "Fellowship-trained experts dedicated to stroke recovery, peripheral neuropathy, epilepsy mapping, and cognitive health.",
+					"highlight": "Subspecialty Care"
+				},
+				{
+					"icon": "microscope",
+					"title": "High-Field 3T Neuro-Imaging",
+					"text": "Ultra-clear functional MRI, diffusion tensor imaging, and 32-channel digital EEG for microscopic neural precision.",
+					"highlight": "Precision Diagnostics"
+				},
+				{
+					"icon": "clock",
+					"title": "Rapid Stroke Intervention",
+					"text": "Comprehensive neurovascular emergency pathways ensuring acute diagnosis and neuro-protective protocols without delay.",
+					"highlight": "Critical Care Ready"
+				},
+				{
+					"icon": "care",
+					"title": "Neuro-Rehabilitation Support",
+					"text": "Integrated occupational, speech, and physical therapy focused on neuroplasticity and returning to daily independence.",
+					"highlight": "Full Recovery Focus"
+				}
+			]
+		},
+
+		"patientFeedback": {
+			"badge": "Post-Treatment Feedback",
+			"title": "What Our Neurology Patients <strong>Say After Treatment</strong>",
+			"subtitle": "Real patient recovery journeys and post-treatment reflections from CareFirst Neurology.",
+			"metrics": [
+				{ "value": "98.7%", "label": "Care Satisfaction" },
+				{ "value": "4.9/5", "label": "Clinical Rating" },
+				{ "value": "1,800+", "label": "Patients Empowered" }
+			],
+			"items": [
+				{
+					"name": "David Harris",
+					"stage": "8-Month Post-Treatment",
+					"treatment": "Intractable Migraine Protocol",
+					"rating": 5,
+					"quote": "I suffered from 18 to 20 migraine days a month for five years. Nothing worked until CareFirst's neuro team performed targeted nerve evaluations and adjusted my protocol with modern CGRP therapy. I now have fewer than 2 mild headaches a month. It has literally given me my career and family life back.",
+					"outcome": "90% Reduction in Pain Days • Return to Full Work"
+				},
+				{
+					"name": "Sunita Aggarwal",
+					"stage": "Post-Stroke Recovery (1 Year)",
+					"treatment": "Comprehensive Neurovascular Rehab",
+					"rating": 5,
+					"quote": "After my mild ischemic stroke, the immediate intervention and coordinated outpatient neuro-rehab at CareFirst helped me regain hand grip and clear speech within four months. The doctors treat you with profound respect and patience.",
+					"outcome": "Independent Mobility • Speech & Fine Motor Restored"
+				},
+				{
+					"name": "Manish Vohra",
+					"stage": "Neuropathy Care Follow-Up",
+					"treatment": "Peripheral Neuropathy Management",
+					"rating": 5,
+					"quote": "The digital nerve conduction studies finally identified the exact root cause of my burning foot pain. The targeted treatment regimen reversed my numbness within twelve weeks. I can sleep peacefully without discomfort again.",
+					"outcome": "Painless Walking • Sound Restful Sleep Restored"
+				}
+			]
+		},
+		"cta": {
+			"config": {
+				"class": "section--centered"
+			},
+			"title": "Consult Our Neurological Specialists Today",
+			"text": "Schedule a comprehensive neurological consultation with CareFirst clinical leaders.",
+			"buttons": [
+				{
+					"text": "Book Appointment",
+					"variant": "solid",
+					"color": "white",
+					"url": "/appointment"
+				}
+			]
+		}
+	}
+}
