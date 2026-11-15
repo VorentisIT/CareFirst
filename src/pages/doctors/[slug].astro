@@ -27,12 +27,13 @@ const { Content } = await render(doctor);
 	title={doctor.data.seo.title}
 	description={doctor.data.seo.description}
 	slug={doctor.data.slug}
+	image={doctor.data.image}
 >
 	<DoctorHero doctor={doctor.data} />
 	<DoctorInfoSection doctor={doctor.data} content={Content} />
 	<CtaSection
 		data={{
-			config: { class: "doctor-page__cta", bacground: "bg-1" },
+			config: { class: "doctor-page__cta", background: "bg-1" },
 			title: `Book a consultation with ${doctor.data.name}`,
 			text: `Schedule an appointment with ${doctor.data.name} for personalized care.`,
 			buttons: [

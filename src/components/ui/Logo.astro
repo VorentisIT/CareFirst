@@ -1,7 +1,6 @@
 ---
-import { Image } from "astro:assets";
+import { withBase } from "@/lib/urls";
 import siteConfig from "../../siteConfig";
-import logoImg from "../../assets/carefirst-logo.png";
 
 interface Props {
 	class?: string;
@@ -10,12 +9,13 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<a href="/" class:list={["logo", className]} aria-label={siteConfig.name}>
-	<Image
-		src={logoImg}
+<a href={withBase("/")} class:list={["logo", className]} aria-label={siteConfig.name}>
+	<img
+		src={withBase("/images/carefirst-logo.png")}
 		alt={siteConfig.name}
 		class="logo__img"
 		loading="eager"
+		decoding="sync"
 	/>
 </a>
 
@@ -25,34 +25,42 @@ const { class: className } = Astro.props;
 		align-items: center;
 		text-decoration: none;
 		line-height: 1;
-
-		.logo__img {
-			display: block;
-			height: 5.8rem;
-			width: auto;
-			max-width: 100%;
-			object-fit: contain;
-			transition: height 0.3s ease;
-		}
+		flex-shrink: 0;
 	}
 
-	:global(.header--scrolled) .logo .logo__img {
-		height: 4.4rem;
+	.logo__img {
+		display: block;
+		height: 5.4rem;
+		max-height: 54px;
+		width: auto;
+		max-width: 22rem;
+		object-fit: contain;
+		transition: height 0.3s ease;
+	}
+
+	:global(.header--scrolled) .logo .logo__img,
+	:global(.header--scrolled) .logo__img {
+		height: 4.2rem;
+		max-height: 42px;
 	}
 
 	@media screen and (max-width: 1024px) {
-		.logo .logo__img {
-			height: 5.2rem;
+		.logo__img {
+			height: 4.8rem;
+			max-height: 48px;
 		}
 	}
 
 	@media screen and (max-width: 640px) {
-		.logo .logo__img {
-			height: 4.6rem;
+		.logo__img {
+			height: 4.2rem;
+			max-height: 42px;
 		}
 
-		:global(.header--scrolled) .logo .logo__img {
-			height: 4rem;
+		:global(.header--scrolled) .logo .logo__img,
+		:global(.header--scrolled) .logo__img {
+			height: 3.8rem;
+			max-height: 38px;
 		}
 	}
 </style>

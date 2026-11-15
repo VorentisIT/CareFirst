@@ -17,13 +17,13 @@ import data from "../content/HomePage.json";
 	description="CareFirst Clinic — Leading specialist healthcare clinic in Ludhiana, Punjab. Comprehensive medical departments, diagnostic imaging, and compassionate patient care."
 >
 	{data.sections.hero && <HeroSection data={data.sections.hero} />}
-	{data.sections.services && <ServicesSection data={data.sections.services} />}
-	{data.sections.why && <WhySection data={data.sections.why} />}
 	{
 		data.sections.statistics && (
 			<StatisticsSection data={data.sections.statistics} />
 		)
 	}
+	{data.sections.services && <ServicesSection data={data.sections.services} />}
+	{data.sections.why && <WhySection data={data.sections.why} />}
 	{
 		data.sections.testimonials && (
 			<TestimonialsSection data={data.sections.testimonials} />

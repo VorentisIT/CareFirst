@@ -1,0 +1,13 @@
+---
+import "../styles/global.css";
+import Layout from "@layouts/Layout.astro";
+import ContactSection from "@/components/blocks/ContactSection.astro";
+import siteConfig from "@/siteConfig";
+---
+
+<Layout
+	title={`Book an Appointment | ${siteConfig.name}`}
+	description="Schedule an appointment with CareFirst Clinic specialist physicians in Ludhiana. Same-day & next-day consultations available."
+>
+	<ContactSection />
+</Layout>

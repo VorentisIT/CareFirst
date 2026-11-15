@@ -81,18 +81,28 @@ const doctors = (props.doctorsList || []) as Doctor[];
 					data-specialty={doctor.specialty.toLowerCase()}
 				>
 					<div class="doctor-card__image-wrap">
-						<img
-							src={doctor.image}
-							alt={`${doctor.name}, ${doctor.specialty}`}
-							loading="lazy"
-							class="doctor-card__img"
-						/>
+						<a
+							href={withBase(doctor.profileUrl)}
+							class="doctor-card__image-link"
+							aria-label={`View profile for ${doctor.name}`}
+						>
+							<img
+								src={doctor.image}
+								alt={`${doctor.name}, ${doctor.specialty}`}
+								loading="lazy"
+								class="doctor-card__img"
+							/>
+						</a>
 					</div>
 
 					<div class="doctor-card__content">
 						<div class="doctor-card__header">
 							<div class="doctor-card__title-row">
-								<h3 class="doctor-card__name">{doctor.name}</h3>
+								<h3 class="doctor-card__name">
+									<a href={withBase(doctor.profileUrl)} class="doctor-card__name-link">
+										{doctor.name}
+									</a>
+								</h3>
 								{doctor.availability && (
 									<div class={`doctor-card__availability ${doctor.availableNow ? "is-now" : ""}`}>
 										<span class="availability-dot" />
@@ -258,6 +268,13 @@ const doctors = (props.doctorsList || []) as Doctor[];
 		}
 	}
 
+	.doctor-card__image-link {
+		display: block;
+		width: 100%;
+		height: 100%;
+		text-decoration: none;
+	}
+
 	.doctor-card__img {
 		width: 100%;
 		height: 100%;
@@ -330,6 +347,16 @@ const doctors = (props.doctorsList || []) as Doctor[];
 		line-height: 1.2;
 		margin: 0;
 		min-width: 0;
+	}
+
+	.doctor-card__name-link {
+		color: inherit;
+		text-decoration: none;
+		transition: color 0.25s ease;
+
+		&:hover {
+			color: var(--color-primary);
+		}
 	}
 
 	.doctor-card__specialty {

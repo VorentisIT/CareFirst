@@ -92,6 +92,7 @@
 						"Spanish"
 					],
 					"image": "/images/doctors/doctor-3.webp",
+					"profileUrl": "/doctors/elena-cruz",
 					"appointmentUrl": "/appointment?doctor=elena-cruz"
 				},
 				{
