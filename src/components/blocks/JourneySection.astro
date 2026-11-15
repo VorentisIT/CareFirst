@@ -8,161 +8,409 @@ interface Props {
 const {
 	data: { ...props },
 } = Astro.props;
+
+const items = props.items || [];
 ---
 
 <Section
-	class={props.config.class}
-	background={props.config.background}
+	class={`journey-section ${props.config?.class || ""}`}
+	background={props.config?.background || "bg-2"}
 	sectionHeader={props.sectionHeader}
 >
 	{
-		props.items && (
-			<ul class="journey-list">
-				{props.items.map((item: any) => (
-					<li class="journey__item">
-						<div class="journey__item-content">
-							<span>{item.year}</span>
-							<h3>{item.title}</h3>
-							<p>{item.text}</p>
-						</div>
-						<div class="journey__item-decor" />
-					</li>
-				))}
-			</ul>
+		items.length > 0 && (
+			<div class="journey-wrapper" data-journey-section>
+				<!-- Central Vertical Animated Track -->
+				<div class="journey-track" aria-hidden="true">
+					<div class="journey-track__bg" />
+					<div class="journey-track__fill" data-timeline-line />
+				</div>
+
+				<ul class="journey-list" role="list">
+					{items.map((item: any, index: number) => (
+						<li
+							class={`journey__item ${index % 2 === 0 ? "journey__item--left" : "journey__item--right"}`}
+							data-journey-item
+							data-index={index}
+						>
+							<!-- Center Milestone Node -->
+							<div class="journey__node" aria-hidden="true">
+								<div class="journey__node-dot" />
+								<div class="journey__node-pulse" />
+							</div>
+
+							<!-- Milestone Content Card -->
+							<div class="journey__card">
+								<div class="journey__badge-row">
+									<span class="journey__year">{item.year}</span>
+									<span class="journey__milestone-tag">{item.tag || `Milestone 0${index + 1}`}</span>
+									{item.metric && <span class="journey__metric-tag">{item.metric}</span>}
+								</div>
+
+								<h3 class="journey__title">{item.title}</h3>
+								<p class="journey__text">{item.text}</p>
+							</div>
+						</li>
+					))}
+				</ul>
+			</div>
 		)
 	}
 </Section>
 
 <style>
-	.journey-list {
+	.journey-section {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.journey-wrapper {
+		position: relative;
 		width: 100%;
-		max-width: 88rem;
-		margin: 6rem auto 0;
+		max-width: 98rem;
+		margin: 0 auto;
+		padding: 3rem 0;
+	}
+
+	/* Central Vertical Timeline Spine */
+	.journey-track {
+		position: absolute;
+		top: 3.2rem;
+		bottom: 3.2rem;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 4px;
+		border-radius: 9999px;
+		overflow: hidden;
+		z-index: 1;
+
+		@media screen and (max-width: 768px) {
+			left: 2.8rem;
+			transform: none;
+		}
+	}
+
+	.journey-track__bg {
+		position: absolute;
+		inset: 0;
+		background: rgba(29, 84, 199, 0.12);
+		border-radius: 9999px;
+	}
+
+	/* GSAP-Scrubbed Vertical Progress Line */
+	.journey-track__fill {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(180deg, var(--color-primary) 0%, #38bdf8 100%);
+		box-shadow: 0 0 14px rgba(29, 84, 199, 0.6);
+		border-radius: 9999px;
+		transform-origin: top center;
+		transform: scaleY(0);
+		will-change: transform;
+	}
+
+	.journey-list {
+		display: flex;
+		flex-direction: column;
+		gap: 5.6rem;
+		position: relative;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+
+		@media screen and (max-width: 768px) {
+			gap: 4rem;
+		}
 	}
 
 	.journey__item {
 		position: relative;
 		display: flex;
-		align-items: center;
+		width: 100%;
+		align-items: flex-start;
+	}
 
-		&:nth-child(even) {
-			flex-direction: row-reverse;
+	/* Alternating Layout */
+	.journey__item--left {
+		justify-content: flex-start;
 
-			.journey__item-content {
-				margin-left: 7%;
-			}
-
-			.journey__item-decor {
-				&:before {
-					right: -0.5%;
-
-					@media screen and (max-width: 768px) {
-						left: -0.5%;
-						right: unset;
-					}
-				}
-
-				&:after {
-					top: calc(50% - 2rem);
-					right: -2rem;
-
-					@media screen and (max-width: 768px) {
-						left: -2rem;
-						right: unset;
-					}
-				}
-
-				@media screen and (max-width: 768px) {
-					margin-right: 0;
-					margin-left: 7%;
-				}
-			}
-		}
-
-		&:nth-child(odd) {
+		.journey__card {
+			margin-right: auto;
 			text-align: right;
+			align-items: flex-end;
 
-			@media screen and (max-width: 768px) {
-				text-align: left;
-				flex-direction: row-reverse;
+			.journey__badge-row {
+				justify-content: flex-end;
 			}
-
-			.journey__item-content {
-				margin-right: 7%;
-
-				@media screen and (max-width: 768px) {
-					margin-right: 0;
-				}
-			}
-
-			.journey__item-decor {
-				&:before {
-					left: -0.5%;
-				}
-
-				&:after {
-					top: calc(50% - 2rem);
-					left: -2rem;
-				}
-
-				@media screen and (max-width: 768px) {
-					margin-right: 0;
-					margin-left: 7%;
-				}
-			}
-		}
-
-		span {
-			color: var(--color-primary);
-		}
-
-		p {
-			line-height: 1.75;
 		}
 	}
 
-	.journey__item-content {
+	.journey__item--right {
+		justify-content: flex-end;
+
+		.journey__card {
+			margin-left: auto;
+			text-align: left;
+			align-items: flex-start;
+
+			.journey__badge-row {
+				justify-content: flex-start;
+			}
+		}
+	}
+
+	/* Center Milestone Node */
+	.journey__node {
+		position: absolute;
+		top: 3.2rem;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 4rem;
+		height: 4rem;
+		border-radius: 50%;
+		background: var(--color-white);
+		border: 3px solid var(--color-card-border);
 		display: flex;
-		padding: 6rem 0;
-		flex-direction: column;
-		flex: 0 0 43%;
-		gap: 1.6rem;
+		align-items: center;
+		justify-content: center;
+		z-index: 2;
+		transition: all 0.35s ease;
+		box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
 
 		@media screen and (max-width: 768px) {
-			padding: 4rem 0;
-			flex: 1 0 80%;
+			left: 2.8rem;
+			width: 3.4rem;
+			height: 3.4rem;
 		}
 	}
 
-	.journey__item-decor {
-		position: relative;
-		flex: 1 1 57%;
-		align-self: stretch;
+	.journey__node-dot {
+		width: 1.4rem;
+		height: 1.4rem;
+		border-radius: 50%;
+		background: #94a3b8;
+		transition: all 0.35s ease;
 
-		&:before,
-		&:after {
-			position: absolute;
-			display: block;
-			content: "";
+		@media screen and (max-width: 768px) {
+			width: 1.2rem;
+			height: 1.2rem;
 		}
+	}
 
-		&:before {
-			top: 0;
-			width: 1%;
-			height: 100%;
-			background-color: var(--color-primary-alpha);
+	.journey__node-pulse {
+		position: absolute;
+		inset: -0.8rem;
+		border-radius: 50%;
+		border: 2px solid var(--color-primary);
+		opacity: 0;
+		transform: scale(0.7);
+		pointer-events: none;
+	}
 
-			@media screen and (max-width: 768px) {
-				width: 0.4rem;
+	/* Content Card */
+	.journey__card {
+		width: calc(50% - 4.4rem);
+		display: flex;
+		flex-direction: column;
+		background: var(--color-white);
+		border: 1px solid var(--color-card-border);
+		border-radius: 2.4rem;
+		padding: 3.2rem;
+		box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+		transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+			border-color 0.4s ease,
+			box-shadow 0.4s ease;
+		will-change: transform, opacity;
+
+		@media screen and (max-width: 768px) {
+			width: calc(100% - 6.4rem) !important;
+			margin-left: 6.4rem !important;
+			margin-right: 0 !important;
+			text-align: left !important;
+			align-items: flex-start !important;
+			padding: 2.4rem;
+
+			.journey__badge-row {
+				justify-content: flex-start !important;
 			}
 		}
 
-		&:after {
-			width: 4rem;
-			height: 4rem;
-			border-radius: 50%;
-			background-color: var(--color-white);
-			border: 0.4rem solid var(--color-primary);
+		&:hover {
+			border-color: rgba(29, 84, 199, 0.4);
+			box-shadow: 0 16px 40px rgba(29, 84, 199, 0.12), 0 2px 8px rgba(15, 23, 42, 0.04);
+		}
+	}
+
+	.journey__badge-row {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.8rem;
+		margin-bottom: 1.2rem;
+	}
+
+	.journey__year {
+		font-family: var(--font-jakarta);
+		font-size: 2rem;
+		font-weight: 800;
+		color: var(--color-primary);
+		letter-spacing: -0.01em;
+	}
+
+	.journey__milestone-tag {
+		font-family: var(--font-jakarta);
+		font-size: 1.2rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		padding: 0.35rem 1rem;
+		border-radius: 9999px;
+		background: rgba(29, 84, 199, 0.08);
+		color: var(--color-primary);
+		border: 1px solid rgba(29, 84, 199, 0.15);
+	}
+
+	.journey__metric-tag {
+		font-size: 1.2rem;
+		font-weight: 600;
+		color: var(--color-muted);
+		background: #f8fafc;
+		border: 1px solid #e2e8f0;
+		padding: 0.35rem 1rem;
+		border-radius: 9999px;
+	}
+
+	.journey__title {
+		font-family: var(--font-jakarta);
+		font-size: clamp(2rem, 1.8rem + 0.4vw, 2.4rem);
+		font-weight: 700;
+		color: var(--color-title);
+		line-height: 1.25;
+		margin: 0 0 1.2rem 0;
+	}
+
+	.journey__text {
+		font-size: 1.6rem;
+		color: var(--color-text);
+		line-height: 1.65;
+		margin: 0;
+	}
+
+	/* Active pulse on reached nodes */
+	.journey__node.is-active {
+		border-color: var(--color-primary) !important;
+		box-shadow: 0 0 0 4px rgba(29, 84, 199, 0.2), 0 6px 20px rgba(29, 84, 199, 0.3) !important;
+
+		.journey__node-dot {
+			background: var(--color-primary) !important;
+			box-shadow: 0 0 10px rgba(29, 84, 199, 0.8) !important;
+			transform: scale(1.2);
+		}
+
+		.journey__node-pulse {
+			animation: nodeRipple 2s infinite ease-out;
+		}
+	}
+
+	@keyframes nodeRipple {
+		0% {
+			transform: scale(0.8);
+			opacity: 0.8;
+		}
+		50% {
+			transform: scale(1.6);
+			opacity: 0;
+		}
+		100% {
+			transform: scale(1.6);
+			opacity: 0;
 		}
 	}
 </style>
+
+<script>
+	import { gsap } from "gsap";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	const initTimelineAnimation = () => {
+		const section = document.querySelector("[data-journey-section]") as HTMLElement | null;
+		const fillLine = document.querySelector("[data-timeline-line]") as HTMLElement | null;
+		const items = Array.from(document.querySelectorAll("[data-journey-item]")) as HTMLElement[];
+
+		if (!section || !fillLine || !items.length) return;
+
+		// 1. Scrub the central vertical line from top to bottom with GSAP ScrollTrigger
+		gsap.fromTo(
+			fillLine,
+			{ scaleY: 0 },
+			{
+				scaleY: 1,
+				ease: "none",
+				scrollTrigger: {
+					trigger: section,
+					start: "top 65%",
+					end: "bottom 75%",
+					scrub: 0.4,
+				},
+			}
+		);
+
+		// 2. Animate each milestone node and card as it reaches the viewport
+		items.forEach((item) => {
+			const card = item.querySelector(".journey__card") as HTMLElement | null;
+			const node = item.querySelector(".journey__node") as HTMLElement | null;
+			const isLeft = item.classList.contains("journey__item--left");
+			const isMobile = window.innerWidth <= 768;
+
+			if (!card || !node) return;
+
+			// Slide-in distance
+			const xOffset = isMobile ? 30 : isLeft ? -50 : 50;
+
+			// Initial state
+			gsap.set(card, {
+				opacity: 0,
+				x: xOffset,
+				y: 20,
+			});
+
+			ScrollTrigger.create({
+				trigger: item,
+				start: "top 72%",
+				onEnter: () => {
+					node.classList.add("is-active");
+					gsap.to(card, {
+						opacity: 1,
+						x: 0,
+						y: 0,
+						duration: 0.7,
+						ease: "power3.out",
+						overwrite: "auto",
+					});
+				},
+				onLeaveBack: () => {
+					node.classList.remove("is-active");
+					gsap.to(card, {
+						opacity: 0,
+						x: xOffset,
+						y: 20,
+						duration: 0.4,
+						ease: "power2.in",
+						overwrite: "auto",
+					});
+				},
+			});
+		});
+	};
+
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", initTimelineAnimation);
+	} else {
+		initTimelineAnimation();
+	}
+</script>

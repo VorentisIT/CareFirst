@@ -78,30 +78,43 @@ const {
 	</div>
 
 	<div class="load-more-wrapper">
-		<Button
-			type="button"
-			variant="outline"
-			color="primary"
-			class="load-more-btn"
-		>
-			Load more specialists
-		</Button>
+		{
+			props.viewAllUrl ? (
+				<Button
+					href={withBase(props.viewAllUrl)}
+					variant="outline"
+					color="primary"
+					class="view-all-btn"
+				>
+					{props.viewAllText || "View All Specialists"}
+				</Button>
+			) : (
+				<Button
+					type="button"
+					variant="outline"
+					color="primary"
+					class="load-more-btn"
+				>
+					Load more specialists
+				</Button>
+			)
+		}
 	</div>
 </Section>
 
 <style>
 	.doctors-grid {
 		display: grid;
-		margin-top: 6rem;
+		margin-top: 0;
 		grid-template-columns: repeat(3, 1fr);
 		gap: var(--global-gap);
 		margin-bottom: 4.8rem;
 
-		@media screen and (max-width: 1023px) {
+		@media screen and (max-width: 1024px) {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
-		@media screen and (max-width: 639px) {
+		@media screen and (max-width: 768px) {
 			grid-template-columns: 1fr;
 		}
 	}
@@ -211,18 +224,16 @@ const {
 <script>
 	const grid = document.querySelector(".doctors-grid");
 	const cards = grid ? Array.from(grid.querySelectorAll(".doctor-card")) : [];
-	const loadMore = document.querySelector(".load-more-btn");
+	const loadMore = document.querySelector(".load-more-btn") as HTMLElement | null;
 	const INITIAL = 3;
 
-	if (cards.length > INITIAL) {
+	if (loadMore && cards.length > INITIAL) {
 		cards.slice(INITIAL).forEach((card) => card.classList.add("is-hidden"));
 
-		if (loadMore) {
-			loadMore.addEventListener("click", () => {
-				cards.forEach((card) => card.classList.remove("is-hidden"));
-				loadMore.style.display = "none";
-			});
-		}
+		loadMore.addEventListener("click", () => {
+			cards.forEach((card) => card.classList.remove("is-hidden"));
+			loadMore.style.display = "none";
+		});
 	} else if (loadMore) {
 		loadMore.style.display = "none";
 	}

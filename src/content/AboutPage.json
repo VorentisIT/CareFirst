@@ -1,5 +1,5 @@
 {
-	"pageTitle": "About us | Medicsare Clinic",
+	"pageTitle": "About us | CareFirst Clinic",
 	"sections": {
 		"hero": {
 			"config": {
@@ -8,7 +8,7 @@
 				"container": "flex"
 			},
 			"title": "Dedicated to Your <strong>Health</strong> and <strong>Wellbeing</strong>",
-			"subtitle": "Since our inception, Medicsare Clinic has been at the forefront of medical innovation. We combine world-class expertise with a deeply personal touch, ensuring every patient receives the specialized care they deserve.",
+			"subtitle": "Since our inception, CareFirst Clinic has been at the forefront of medical innovation. We combine world-class expertise with a deeply personal touch, ensuring every patient receives the specialized care they deserve.",
 			"image": "team.webp",
 			"buttons": [
 				{
@@ -95,27 +95,42 @@
 
 		"journey": {
 			"config": {
-				"class": "section--centered"
+				"class": "section--centered",
+				"background": "bg-2"
 			},
 			"sectionHeader": {
-				"title": "Our Journey",
-				"subtitle": "A legacy of trust and innovation built over two decades."
+				"eyebrow": "Milestones of Care",
+				"title": "Our Journey Through the Years",
+				"subtitle": "A legacy of trust, clinical excellence, and medical innovation built over nearly two decades."
 			},
 			"items": [
 				{
-					"year": 2008,
-					"title": "Foundation",
-					"text": "Medicsare opens its doors as a specialized family practice in the heart of the city."
+					"year": "2008",
+					"tag": "Milestone 01",
+					"metric": "First 10k Patients",
+					"title": "Foundation & First Clinic",
+					"text": "CareFirst opens its doors as a dedicated family clinic in the heart of the city, focusing on accessible patient-first community healthcare."
 				},
 				{
-					"year": 2015,
-					"title": "Surgical Wing Launch",
-					"text": "Opening of our state-of-the-art surgical suites featuring advanced robotic-assisted platforms."
+					"year": "2015",
+					"tag": "Milestone 02",
+					"metric": "Robotic Suites",
+					"title": "Advanced Surgical Wing",
+					"text": "Launch of our multi-specialty surgical suites and dedicated cardiac catheterization lab equipped with European diagnostic platforms."
 				},
 				{
-					"year": 2022,
-					"title": "Global Excellence Award",
-					"text": "Recognized as the leading private medical center for patient safety and clinical outcomes."
+					"year": "2020",
+					"tag": "Milestone 03",
+					"metric": "100k+ Digital Visits",
+					"title": "Digital Health & Telehealth",
+					"text": "Pioneered integrated 24/7 digital health records, remote consultations, and rapid automated laboratory diagnostics."
+				},
+				{
+					"year": "2025",
+					"tag": "Milestone 04",
+					"metric": "AI Diagnostics",
+					"title": "AI Diagnostics & Center of Excellence",
+					"text": "Recognized internationally as a modern smart medical hub integrating AI-driven diagnostic imaging and minimally invasive care."
 				}
 			]
 		},

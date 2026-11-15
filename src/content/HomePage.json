@@ -187,7 +187,7 @@
 			"sectionHeader": {
 				"eyebrow": "Patient Testimonials",
 				"title": "What our patients say",
-				"subtitle": "Real stories from our patients who chose Medicsare Clinic for their care and trust our expertise."
+				"subtitle": "Real stories from our patients who chose CareFirst Clinic for their care and trust our expertise."
 			},
 			"items": [
 				{
@@ -235,13 +235,47 @@
 			]
 		},
 
+		"faq": {
+			"config": {
+				"class": "section--centered",
+				"background": "bg-1"
+			},
+			"sectionHeader": {
+				"eyebrow": "Need Help?",
+				"title": "Frequently Asked <strong>Questions</strong>",
+				"subtitle": "Quick answers to common questions about appointments, insurance coverage, and visiting CareFirst Clinic."
+			},
+			"items": [
+				{
+					"question": "Do you accept health insurance?",
+					"answer": "Yes, we partner with major international and local health insurance providers. Our billing specialists handle direct claims processing to minimize your out-of-pocket expenses."
+				},
+				{
+					"question": "How do I schedule a same-day consultation?",
+					"answer": "You can reserve a same-day appointment through our 24/7 online booking portal or by contacting our patient care coordinators directly. Urgent appointments are prioritized based on clinical need."
+				},
+				{
+					"question": "What documents should I bring to my first appointment?",
+					"answer": "Please bring a valid photo ID, your active insurance card, recent lab or imaging results, and a list of any current medications or supplements you take regularly."
+				},
+				{
+					"question": "How quickly will I receive my diagnostic test results?",
+					"answer": "Standard blood tests and digital imaging (MRI, CT, X-ray) reports are typically processed within 24 to 48 hours and made securely accessible in your CareFirst digital patient portal."
+				},
+				{
+					"question": "Can I consult with specialists remotely via telehealth?",
+					"answer": "Yes, CareFirst offers secure HIPAA-compliant video consultations for routine follow-ups, medication reviews, and second medical opinions."
+				}
+			]
+		},
+
 		"cta": {
 			"config": {
 				"class": "section--centered",
 				"background": "bg-2"
 			},
 			"title": "Ready To Get Professional Help?",
-			"text": "Sign up for a consultation today and start your path to a healthy life with Medicsare experts.",
+			"text": "Sign up for a consultation today and start your path to a healthy life with CareFirst experts.",
 			"buttons": [
 				{
 					"text": "Book Appointment",
