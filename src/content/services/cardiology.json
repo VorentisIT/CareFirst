@@ -75,7 +75,7 @@
 			},
 			"sectionHeader": {
 				"title": "Patient Testimonials",
-				"subtitle": "Real stories from our patients who chose Medicsare Clinic cardiology service."
+				"subtitle": "Real stories from our patients who chose CareFirst Clinic cardiology service."
 			},
 			"items": [
 				{
@@ -114,7 +114,7 @@
 				"class": "section--centered"
 			},
 			"title": "Ready To Get Professional Help?",
-			"text": "Sign up for a consultation today and start your path to a healthy life with Medicsare experts.",
+			"text": "Sign up for a consultation today and start your path to a healthy life with CareFirst experts.",
 			"buttons": [
 				{
 					"text": "Book Appointment",

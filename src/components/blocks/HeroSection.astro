@@ -57,12 +57,16 @@ const heroImage = images[`../assets/${props.image}`];
 				)
 			}
 
-			<div class="hero-trust">
-				<div class="hero-trust__rating">
-					<div class="hero-trust__stars" aria-hidden="true">★★★★★</div>
-					<span class="hero-trust__score"><strong>4.9/5</strong> (2,500+ Verified Patient Reviews)</span>
-				</div>
-			</div>
+			{
+				!props.hideTrust && !props.config?.hideTrust && (
+					<div class="hero-trust">
+						<div class="hero-trust__rating">
+							<div class="hero-trust__stars" aria-hidden="true">★★★★★</div>
+							<span class="hero-trust__score"><strong>4.9/5</strong> (2,500+ Verified Patient Reviews)</span>
+						</div>
+					</div>
+				)
+			}
 		</div>
 	</Container>
 </section>

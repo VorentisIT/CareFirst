@@ -27,9 +27,9 @@ export interface SiteConfig {
 const siteConfig: SiteConfig = {
 	name: "CareFirst Clinic",
 	copyright: "© 2026 CareFirst Clinic. All rights reserved.",
-	address: "1200 Medical Plaza, Suite 400, Innovation District, SF 94105",
-	phone: "+1 (000) 123-4567",
-	email: "mail@example.com",
+	address: "Gill Road, Civil Lines, Ludhiana, Punjab 141014, India",
+	phone: "+91 62397 96319",
+	email: "vorentis.it@gmail.com",
 	nav: {
 		main: [
 			{ text: "About us", url: "/about" },

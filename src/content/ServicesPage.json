@@ -1,14 +1,15 @@
 {
-	"pageTitle": "Services | Medicsare Clinic",
+	"pageTitle": "Medical Services | CareFirst Clinic",
 	"sections": {
 		"hero": {
 			"config": {
 				"class": "section--hero",
 				"background": "bg-1",
-				"container": "flex"
+				"container": "flex",
+				"hideTrust": true
 			},
 			"title": "Comprehensive <strong>Medical Services</strong>",
-			"subtitle": "At Medicsare, we combine advanced medical technology with personalized treatment plans to ensure the best outcomes for our patients. Your health is our priority, delivered with compassion and expertise.",
+			"subtitle": "At CareFirst, we combine advanced medical technology with personalized treatment plans to ensure the best outcomes for our patients. Your health is our priority, delivered with compassion and expertise.",
 			"image": "service.webp",
 			"buttons": [
 				{

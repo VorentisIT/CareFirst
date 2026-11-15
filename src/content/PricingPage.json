@@ -1,5 +1,5 @@
 {
-	"pageTitle": "Pricing & Insurance | Medicsare Clinic",
+	"pageTitle": "Pricing & Insurance | CareFirst Clinic",
 	"sections": {
 		"pricing": {
 			"config": {
@@ -118,7 +118,7 @@
 			},
 			"sectionHeader": {
 				"title": "FAQ",
-				"subtitle": "Find answers to common questions about financial matters at Medicsare."
+				"subtitle": "Find answers to common questions about financial matters at CareFirst Clinic."
 			},
 			"items": [
 				{

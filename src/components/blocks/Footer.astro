@@ -66,13 +66,12 @@ import Logo from "@ui/Logo.astro";
 			)
 		}
 
-		{
-			siteConfig.copyright && (
-				<div class="footer-bottom">
-					<p>{siteConfig.copyright}</p>
-				</div>
-			)
-		}
+		<div class="footer-bottom">
+			{siteConfig.copyright && <p class="footer-copyright">{siteConfig.copyright}</p>}
+			<p class="footer-dev">
+				Develop by <a href="https://vorentis-it.com" target="_blank" rel="noopener noreferrer">vorentis-it.com</a>
+			</p>
+		</div>
 	</Container>
 </footer>
 
@@ -140,7 +139,39 @@ import Logo from "@ui/Logo.astro";
 
 	.footer-bottom {
 		width: 100%;
+		flex: 1 1 100%;
 		padding-top: 2.4rem;
-		border-top: 1px solid #afafaf;
+		border-top: 1px solid #cbd5e1;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 1.2rem;
+	}
+
+	.footer-copyright {
+		margin: 0;
+		color: var(--color-muted);
+		font-size: 1.4rem;
+	}
+
+	.footer-dev {
+		margin: 0;
+		margin-left: auto;
+		text-align: right;
+		color: var(--color-muted);
+		font-size: 1.4rem;
+		white-space: nowrap;
+
+		a {
+			color: var(--color-primary);
+			font-weight: 700;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+				color: var(--color-primary-dark);
+			}
+		}
 	}
 </style>

@@ -10,13 +10,14 @@ const mapImage = images[`../assets/map.webp`];
 ---
 
 <Section
-	class=""
+	class="contact-section"
 	background="bg-2"
 	headingLevel={1}
 	sectionHeader={{
-		title: "Send Us A Message",
+		eyebrow: "Contact CareFirst",
+		title: "Send Us A <strong>Message</strong>",
 		subtitle:
-			"Whether you have a question about our services, insurance, or simply want to learn more about our patient care, we are here to help. <br>Our team typically responds within 24 business hours.",
+			"Whether you have a question about our services, insurance, or simply want to learn more about our patient care, we are here to help.<br>Our team typically responds within 24 business hours.",
 	}}
 >
 	<div class="contact-wrapper">
@@ -38,7 +39,7 @@ const mapImage = images[`../assets/map.webp`];
 					type="email"
 					id="email"
 					name="email"
-					placeholder="john@example.com"
+					placeholder="vorentis.it@gmail.com"
 					autocomplete="email"
 					required
 				/>
@@ -49,22 +50,24 @@ const mapImage = images[`../assets/map.webp`];
 					type="tel"
 					id="phone"
 					name="phone"
-					placeholder="(555) 000-0000"
+					placeholder="+91 62397 96319"
 					autocomplete="tel"
 					inputmode="tel"
-					pattern="[0-9+()\-\s.]{7,20}"
+					pattern="[0-9+()\\-\\s.]{7,20}"
 					required
 				/>
 			</label>
 			<label for="subject" class="single">
 				<span>Subject</span>
-				<select id="subject" name="subject">
-					<option value="general-inquiry">General Inquiry</option>
-					<option value="appointment-help">Appointment Help</option>
-					<option value="billing-question">Billing Question</option>
-					<option value="insurance-inquiry">Insurance Inquiry</option>
-					<option value="feedback">Feedback</option>
-				</select>
+				<div class="select-wrap">
+					<select id="subject" name="subject">
+						<option value="general-inquiry">General Inquiry</option>
+						<option value="appointment-help">Appointment Help</option>
+						<option value="billing-question">Billing Question</option>
+						<option value="insurance-inquiry">Insurance Inquiry</option>
+						<option value="feedback">Feedback</option>
+					</select>
+				</div>
 			</label>
 			<label for="message" class="double">
 				<span>Message</span>
@@ -72,10 +75,10 @@ const mapImage = images[`../assets/map.webp`];
 					name="message"
 					id="message"
 					placeholder="How can we help you today?"
-					rows="10"
+					rows="6"
 					required></textarea>
 			</label>
-			<Button type="submit" variant="solid" color="primary" class="double"
+			<Button type="submit" variant="solid" color="primary" class="double contact__btn"
 				>Send Message</Button
 			>
 			<p id="form-status" class="form-status double" aria-live="polite"></p>
@@ -85,59 +88,102 @@ const mapImage = images[`../assets/map.webp`];
 			<h2>Contact Information</h2>
 			<ul class="contact__list">
 				{
-					siteConfig.phone &&
-					<li class="contact__item">
-						<span class="contact__icon"><Icon name="phone" /></span>
-						<div class="contact__details">
-							<span>Phone Number</span>
-							<a href=`tel:${siteConfig.phone}`>{siteConfig.phone}</a>
-						</div>
-					</li>
+					siteConfig.phone && (
+						<li class="contact__item">
+							<span class="contact__icon"><Icon name="phone" /></span>
+							<div class="contact__details">
+								<span>Phone Number</span>
+								<a href={`tel:${siteConfig.phone}`}>{siteConfig.phone}</a>
+							</div>
+						</li>
+					)
 				}
 				{
-					siteConfig.email &&
-					<li class="contact__item">
-						<span class="contact__icon"><Icon name="email" /></span>
-						<div class="contact__details">
-							<span>Email Address</span>
-							<a href=`mailto:${siteConfig.email}`>{siteConfig.email}</a>
-						</div>
-					</li>
+					siteConfig.email && (
+						<li class="contact__item">
+							<span class="contact__icon"><Icon name="email" /></span>
+							<div class="contact__details">
+								<span>Email Address</span>
+								<a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+							</div>
+						</li>
+					)
 				}
 				{
-					siteConfig.address &&
-					<li class="contact__item">
-						<span class="contact__icon"><Icon name="marker" /></span>
-						<div class="contact__details">
-							<span>Our Location</span>
-							{siteConfig.address}
-						</div>
-					</li>
+					siteConfig.address && (
+						<li class="contact__item">
+							<span class="contact__icon"><Icon name="marker" /></span>
+							<div class="contact__details">
+								<span>Our Location</span>
+								<p>{siteConfig.address}</p>
+							</div>
+						</li>
+					)
 				}
+				<li class="contact__item">
+					<span class="contact__icon"><Icon name="clock" /></span>
+					<div class="contact__details">
+						<span>Clinic Hours</span>
+						<p>Mon – Sat: 8:00 AM – 8:00 PM<br /><small>Emergency triage available 24/7</small></p>
+					</div>
+				</li>
 			</ul>
 		</div>
 
 		<div class="card contact__map">
 			<div class="map-holder">
-				<Image src={mapImage} width={1000} height={400} alt="" />
+				{mapImage && <Image src={mapImage} width={1200} height={400} alt="CareFirst Clinic Location Map" />}
+			</div>
+			<div class="map-bar">
+				<div class="map-bar__info">
+					<strong>CareFirst Clinic</strong>
+					<span>{siteConfig.address} • Validated Patient Parking</span>
+				</div>
+				<a
+					href={`https://maps.google.com/?q=${encodeURIComponent(siteConfig.address)}`}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="map-bar__btn"
+				>
+					<Icon name="marker" />
+					<span>Get Directions</span>
+				</a>
 			</div>
 		</div>
 	</div>
 </Section>
 
 <style>
+	.contact-section {
+		position: relative;
+	}
+
 	.contact-wrapper {
 		display: grid;
-		margin-top: calc(var(--global-gap) * 2);
+		margin-top: calc(var(--global-gap) * 1.5);
 		grid-template-columns: repeat(12, 1fr);
 		gap: var(--global-gap);
+	}
+
+	/* Card Polish */
+	.contact__form,
+	.contact__info {
+		background: var(--color-white);
+		border: 1px solid var(--color-card-border);
+		border-radius: 2.4rem;
+		box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+		padding: 3.2rem;
+
+		@media screen and (max-width: 768px) {
+			padding: 2.4rem;
+		}
 	}
 
 	.contact__form {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-column: span 7;
-		gap: var(--global-gap);
+		gap: 2rem;
 
 		@media screen and (max-width: 1024px) {
 			grid-column: span 12;
@@ -146,39 +192,52 @@ const mapImage = images[`../assets/map.webp`];
 		label {
 			display: flex;
 			flex-direction: column;
-			gap: 1.2rem;
+			gap: 0.8rem;
 			color: var(--color-title);
 
 			span {
-				font-size: 1.4rem;
-				font-weight: 600;
+				font-size: 1.35rem;
+				font-weight: 700;
+				color: var(--color-title);
 			}
 		}
 
 		input,
 		select,
 		textarea {
-			padding: 1.4rem 1.6rem;
+			width: 100%;
+			padding: 1.3rem 1.6rem;
 			color: var(--color-title);
-			border: 1px solid #e8eef8;
-			background-color: var(--color-white);
+			font-family: inherit;
+			font-size: 1.5rem;
+			border: 1.5px solid #e2e8f0;
+			background-color: #f8fafc;
 			border-radius: 1.2rem;
-			transition: all 0.2s ease;
+			transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+			box-sizing: border-box;
 
-			&:focus,
-			&:active {
-				border-color: #dae2ff;
+			&::placeholder {
+				color: #94a3b8;
+			}
+
+			&:focus {
+				border-color: var(--color-primary);
+				background-color: var(--color-white);
+				box-shadow: 0 0 0 3px rgba(29, 84, 199, 0.12);
+				outline: none;
 			}
 		}
 
 		textarea {
 			resize: vertical;
+			min-height: 12rem;
+			line-height: 1.6;
 		}
 
 		.single {
 			grid-column: span 1;
 
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 640px) {
 				grid-column: span 2;
 			}
 		}
@@ -187,51 +246,94 @@ const mapImage = images[`../assets/map.webp`];
 			grid-column: span 2;
 		}
 
+		.contact__btn {
+			padding: 1.4rem 2.8rem;
+			font-size: 1.55rem;
+			font-weight: 700;
+			border-radius: 1.2rem;
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+			&:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 8px 20px rgba(29, 84, 199, 0.25);
+			}
+		}
+
 		.form-status {
 			grid-column: span 2;
 			margin: 0;
 			font-size: 1.4rem;
 			font-weight: 600;
-			color: var(--color-primary);
+			color: #047857;
+			padding: 1.2rem 1.6rem;
+			border-radius: 1rem;
+			background: #ecfdf5;
+			border: 1px solid #a7f3d0;
+			display: none;
+
+			&.is-visible {
+				display: block;
+			}
 		}
 	}
 
+	.select-wrap {
+		position: relative;
+		width: 100%;
+
+		select {
+			appearance: none;
+			cursor: pointer;
+			padding-right: 4rem;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			right: 1.6rem;
+			top: 50%;
+			width: 0.8rem;
+			height: 0.8rem;
+			border-right: 2px solid var(--color-muted);
+			border-bottom: 2px solid var(--color-muted);
+			transform: translateY(-70%) rotate(45deg);
+			pointer-events: none;
+		}
+	}
+
+	/* Info Card */
 	.contact__info {
 		grid-column: span 5;
+		display: flex;
+		flex-direction: column;
 
 		@media screen and (max-width: 1024px) {
 			grid-column: span 12;
 		}
-	}
 
-	.contact__map {
-		grid-column: span 12;
-	}
-
-	.map-holder {
-		border-radius: 1.2rem;
-		height: 40rem;
-		overflow: hidden;
-
-		img {
-			display: block;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
+		h2 {
+			font-family: var(--font-jakarta);
+			font-size: 2.2rem;
+			font-weight: 800;
+			color: var(--color-title);
+			line-height: 1.2;
+			margin: 0 0 0.8rem 0;
 		}
 	}
 
 	.contact__list {
-		margin-top: var(--global-gap);
+		list-style: none;
+		padding: 0;
+		margin: var(--global-gap) 0 0 0;
+		display: flex;
+		flex-direction: column;
+		gap: 2.4rem;
 	}
 
 	.contact__item {
 		display: flex;
-		gap: var(--global-gap);
-
-		& + & {
-			margin-top: 4rem;
-		}
+		align-items: flex-start;
+		gap: 1.6rem;
 	}
 
 	.contact__icon {
@@ -243,35 +345,140 @@ const mapImage = images[`../assets/map.webp`];
 		justify-content: center;
 		color: var(--color-primary);
 		font-size: 2rem;
-		background-color: #dae2ff;
-		border-radius: 50%;
+		background-color: rgba(29, 84, 199, 0.08);
+		border-radius: 1.4rem;
+
+		:global(svg) {
+			width: 2.2rem;
+			height: 2.2rem;
+		}
 	}
 
 	.contact__details {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
-		font-weight: 600;
+		gap: 0.4rem;
 
-		a {
-			color: var(--color-primary);
+		span {
+			color: var(--color-muted);
+			font-size: 1.25rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+		}
+
+		a, p {
+			color: var(--color-title);
+			font-size: 1.6rem;
+			font-weight: 700;
 			text-decoration: none;
+			margin: 0;
+			line-height: 1.45;
+			transition: color 0.2s ease;
+		}
 
-			&:hover, &:active {
-				text-decoration: underline;
-			}
+		a:hover {
+			color: var(--color-primary);
+		}
+
+		small {
+			display: block;
+			color: var(--color-muted);
+			font-size: 1.3rem;
+			font-weight: 500;
+			margin-top: 0.2rem;
+		}
+	}
+
+	/* Map Card */
+	.contact__map {
+		grid-column: span 12;
+		padding: 0;
+		overflow: hidden;
+		border-radius: 2.4rem;
+		border: 1px solid var(--color-card-border);
+		background: var(--color-white);
+		box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+	}
+
+	.map-holder {
+		width: 100%;
+		height: 38rem;
+		overflow: hidden;
+		background: #f1f5f9;
+
+		@media screen and (max-width: 768px) {
+			height: 30rem;
+		}
+
+		:global(img) {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.map-bar {
+		padding: 1.8rem 2.8rem;
+		background: var(--color-white);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 1.4rem;
+		border-top: 1px solid var(--color-card-border);
+
+		@media screen and (max-width: 640px) {
+			padding: 1.6rem 2rem;
+		}
+	}
+
+	.map-bar__info {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+
+		strong {
+			font-family: var(--font-jakarta);
+			font-size: 1.65rem;
+			font-weight: 800;
+			color: var(--color-title);
 		}
 
 		span {
-			color: var(--color-title);
-			font-size: 1.4rem;
-			font-weight: 600;
+			font-size: 1.35rem;
+			color: var(--color-muted);
+		}
+	}
+
+	.map-bar__btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.8rem;
+		background: var(--color-primary);
+		color: #ffffff;
+		padding: 0.9rem 1.8rem;
+		border-radius: 9999px;
+		font-size: 1.35rem;
+		font-weight: 700;
+		text-decoration: none;
+		transition: background-color 0.2s ease, transform 0.2s ease;
+
+		&:hover {
+			background-color: var(--color-primary-dark);
+			transform: translateY(-2px);
+		}
+
+		:global(svg) {
+			width: 1.6rem;
+			height: 1.6rem;
 		}
 	}
 </style>
 
 <script>
-	const form = document.querySelector(".contact__form");
+	const form = document.querySelector(".contact__form") as HTMLFormElement | null;
 
 	if (form) {
 		form.addEventListener("submit", (e) => {
@@ -279,8 +486,11 @@ const mapImage = images[`../assets/map.webp`];
 			const status = document.getElementById("form-status");
 
 			if (form.checkValidity()) {
-				status.textContent =
-					"Your message has been submitted. We typically respond within 24 business hours.";
+				if (status) {
+					status.classList.add("is-visible");
+					status.textContent =
+						"✓ Your message has been submitted. Our team typically responds within 24 business hours.";
+				}
 				form.reset();
 			} else {
 				form.reportValidity();

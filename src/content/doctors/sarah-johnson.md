@@ -8,8 +8,8 @@ rating: 4.9
 reviews: 128
 experienceYears: 15
 image: /images/doctors/doctor-1.webp
-phone: +1 (000) 010-2048
-email: email@example.com
+phone: +91 62397 96319
+email: vorentis.it@gmail.com
 languages:
   - English
   - Spanish
@@ -33,7 +33,7 @@ focusAreas:
     icon: shield
 education:
   - degree: Senior Cardiologist
-    institution: Medicsare Clinic
+    institution: CareFirst Clinic
     year: "2018 - PRESENT"
   - degree: Lead Interventionalist
     institution: Heart Research Hospital

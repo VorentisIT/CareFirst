@@ -1,25 +1,18 @@
-# Medicsare — Medical & Healthcare Template for Astro
+# CareFirst Clinic — Premier Healthcare & Medical Services
 
-Medicsare is a modern and responsive website template built with Astro, designed for healthcare businesses, private clinics, hospitals, medical centers, dentists, and healthcare professionals.
+CareFirst Clinic is a modern, high-performance healthcare website built with Astro, designed for premier patient care, specialist consultations, and advanced medical diagnostics in Ludhiana, Punjab.
 
-Live demo: https://medicsare.netlify.app/
+Developed by [vorentis-it.com](https://vorentis-it.com).
 
-## ✨ Features
+## ✨ Key Capabilities
 
-- Fully responsive design
-- Built with Astro
-- Fast page loading and excellent performance
-- SEO-friendly structure
-- Modern and clean UI
-- Reusable components
-- Services pages
-- Doctors and specialists pages
-- Testimonials section
-- Contact form
-- FAQ section
-- Mobile-friendly navigation
+- **High-Performance Static Generation**: Fast page loading and responsive design across all devices.
+- **Board-Certified Specialist Team**: Interactive physician profiles with appointment links.
+- **Comprehensive Services**: Detailed departmental overviews (Cardiology, Neurology, Pediatrics, Orthopedics, Radiology, Laboratory).
+- **Direct Patient Booking & Contact**: Consultation requests, emergency triage guidance, and clinic campus locator.
+- **SEO & Social Share Ready**: Open Graph meta tags, high-resolution social sharing cards, and responsive favicons.
 
-## 🚀 Getting Started
+## 🚀 Development
 
 Install dependencies:
 
@@ -33,49 +26,8 @@ Start the development server:
 npm run dev
 ```
 
-Open:
-
-```text
-http://localhost:4321
-```
-
-## 📦 Build for Production
+Build for production:
 
 ```bash
 npm run build
 ```
-
-Preview the production build:
-
-```bash
-npm run preview
-```
-
-## 🛠️ Technologies
-
-- Astro
-- TypeScript
-- CSS / SCSS
-- Markdown
-- Vite
-
-## 🎨 Customization
-
-You can easily customize:
-
-- Colors
-- Typography
-- Content
-- Images
-- Sections and layouts
-- SEO metadata
-
-## 📄 License
-
-Feel free to use this template for personal and commercial projects.
-
----
-
-Built with ❤️ and Astro.
-
-# CareFirst
