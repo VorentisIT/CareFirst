@@ -1,11 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "carefirst-clinic",
+  "name": "carefirst",
   "compatibility_date": "2026-11-13",
+  "pages_build_output_dir": "dist",
   "observability": {
     "enabled": true
-  },
-  "assets": {
-    "directory": "dist"
   }
 }
