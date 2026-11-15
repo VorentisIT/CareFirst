@@ -162,14 +162,14 @@ const {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-auto-flow: dense;
-		gap: 2.4rem;
+		gap: var(--global-gap);
 		width: 100%;
 
-		@media screen and (max-width: 1080px) {
+		@media screen and (max-width: 1024px) {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
-		@media screen and (max-width: 720px) {
+		@media screen and (max-width: 768px) {
 			grid-template-columns: 1fr;
 		}
 	}

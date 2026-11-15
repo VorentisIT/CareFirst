@@ -1,5 +1,5 @@
 {
-	"pageTitle": "Our Doctors | Medicsare Clinic",
+	"pageTitle": "Our Medical Specialists | CareFirst Clinic",
 	"sections": {
 		"hero": {
 			"config": {
@@ -7,9 +7,9 @@
 				"background": "bg-1",
 				"container": "flex"
 			},
-			"title": "Expert Care from Our <strong>Medical Specialists</strong>",
-			"subtitle": "Meet our world-class team of specialists dedicated to providing exceptional healthcare with a human touch. Every physician at Medicsare is board-certified and a leader in their field.",
-			"image": "hero-image.webp",
+			"title": "Expert Care from Leading <strong>Specialist Physicians</strong>",
+			"subtitle": "Meet our distinguished network of physicians, surgeons, and clinical leaders. Every specialist at CareFirst is board-certified, bringing decades of clinical innovation and compassionate care to your health journey.",
+			"image": "doctors-hero.webp",
 			"buttons": [
 				{
 					"text": "Book Appointment",
@@ -18,69 +18,128 @@
 					"url": "/appointment"
 				},
 				{
-					"text": "Our Services",
+					"text": "Explore Services",
 					"variant": "outline",
 					"color": "primary",
 					"url": "/services"
 				}
 			]
 		},
-
 		"doctors": {
 			"config": {
 				"class": "section--centered",
 				"background": "bg-2"
 			},
 			"sectionHeader": {
-				"eyebrow": "Medical Team",
-				"title": "Meet Our Specialists",
-				"subtitle": "Choose from our network of experienced healthcare professionals, <br>that combining years of clinical experience with a modern approach to care."
+				"eyebrow": "CareFirst Clinical Network",
+				"title": "Meet Our Medical Specialists",
+				"subtitle": "Search and filter through our multidisciplinary team of experienced healthcare leaders dedicated to providing world-class care."
 			},
+			"categories": [
+				"All",
+				"Cardiology",
+				"Neurology",
+				"Pediatrics",
+				"Orthopedics",
+				"Dermatology"
+			],
 			"doctorsList": [
 				{
 					"name": "Dr. Sarah Johnson",
+					"department": "Cardiology",
 					"specialty": "Senior Cardiologist",
+					"credentials": "MD, FACC • 16 Yrs Exp",
+					"availability": "Available Today",
+					"availableNow": true,
 					"rating": 4.9,
+					"reviewsCount": 142,
+					"languages": [
+						"English",
+						"French"
+					],
 					"image": "/images/doctors/doctor-1.webp",
 					"profileUrl": "/doctors/sarah-johnson",
 					"appointmentUrl": "/appointment?doctor=sarah-johnson"
 				},
 				{
 					"name": "Dr. Michael Chen",
+					"department": "Neurology",
 					"specialty": "Chief of Neurology",
+					"credentials": "MD, PhD • 18 Yrs Exp",
+					"availability": "Next Slot: Tue",
+					"availableNow": false,
 					"rating": 4.8,
+					"reviewsCount": 118,
+					"languages": [
+						"English",
+						"Mandarin"
+					],
 					"image": "/images/doctors/doctor-2.webp",
 					"profileUrl": "/doctors/michael-chen",
 					"appointmentUrl": "/appointment?doctor=michael-chen"
 				},
 				{
-					"name": "Dr. Elena Rodriguez",
+					"name": "Dr. Elena Cruz",
+					"department": "Pediatrics",
 					"specialty": "Senior Pediatrician",
+					"credentials": "MD, FAAP • 12 Yrs Exp",
+					"availability": "Available Today",
+					"availableNow": true,
 					"rating": 5.0,
+					"reviewsCount": 185,
+					"languages": [
+						"English",
+						"Spanish"
+					],
 					"image": "/images/doctors/doctor-3.webp",
-					"profileUrl": "/doctors/elena-rodriguez",
-					"appointmentUrl": "/appointment?doctor=elena-rodriguez"
+					"appointmentUrl": "/appointment?doctor=elena-cruz"
 				},
 				{
 					"name": "Dr. James Wilson",
-					"specialty": "Orthopedic Surgeon",
+					"department": "Orthopedics",
+					"specialty": "Orthopedic & Spine Surgeon",
+					"credentials": "MD, FAAOS • 15 Yrs Exp",
+					"availability": "Next Slot: Wed",
+					"availableNow": false,
 					"rating": 4.7,
+					"reviewsCount": 96,
+					"languages": [
+						"English"
+					],
 					"image": "/images/doctors/doctor-4.webp",
 					"profileUrl": "/doctors/james-wilson",
 					"appointmentUrl": "/appointment?doctor=james-wilson"
 				},
 				{
 					"name": "Dr. Amara Okoro",
-					"specialty": "Dermatology Specialist",
+					"department": "Dermatology",
+					"specialty": "Dermatology & Skin Oncology",
+					"credentials": "MD, FAAD • 11 Yrs Exp",
+					"availability": "Available Today",
+					"availableNow": true,
 					"rating": 4.9,
+					"reviewsCount": 134,
+					"languages": [
+						"English",
+						"Yoruba"
+					],
 					"image": "/images/doctors/doctor-5.webp",
 					"profileUrl": "/doctors/amara-okoro",
 					"appointmentUrl": "/appointment?doctor=amara-okoro"
 				},
 				{
 					"name": "Dr. David Miller",
-					"specialty": "Consultant Cardiologist",
+					"department": "Cardiology",
+					"specialty": "Consultant Interventional Cardiologist",
+					"credentials": "MD, FSCAI • 14 Yrs Exp",
+					"availability": "Next Slot: Thu",
+					"availableNow": false,
 					"rating": 4.8,
+					"reviewsCount": 89,
+					"languages": [
+						"English",
+						"German"
+					],
 					"image": "/images/doctors/doctor-6.webp",
 					"profileUrl": "/doctors/david-miller",
 					"appointmentUrl": "/appointment?doctor=david-miller"
@@ -92,11 +151,11 @@
 				"class": "section--centered",
 				"background": "bg-2"
 			},
-			"title": "Can't find the right specialist?",
-			"text": "Our patient coordination team is available to help you find the perfect match for your specific healthcare needs.",
+			"title": "Need Help Choosing the Right Specialist?",
+			"text": "Our patient coordination team is available 24/7 to review your symptoms, coordinate referrals, and match you with the ideal physician.",
 			"buttons": [
 				{
-					"text": "Contact us for assistance",
+					"text": "Speak with Care Coordinator",
 					"variant": "solid",
 					"color": "white",
 					"url": "/contact"
