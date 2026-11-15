@@ -89,7 +89,10 @@ const doctors = (props.doctorsList || []) as Doctor[];
 							<img
 								src={doctor.image}
 								alt={`${doctor.name}, ${doctor.specialty}`}
+								width="400"
+								height="320"
 								loading="lazy"
+								decoding="async"
 								class="doctor-card__img"
 							/>
 						</a>

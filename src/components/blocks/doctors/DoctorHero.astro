@@ -16,7 +16,16 @@ const { doctor } = Astro.props;
 <Section class="doctor-hero" background="bg-1" container="flex">
 	<Column class="doctor-hero__image-col">
 		<div class="doctor-hero__image-wrap">
-			<img src={doctor.image} alt={doctor.name} class="doctor-hero__image" />
+			<img
+				src={doctor.image}
+				alt={doctor.name}
+				class="doctor-hero__image"
+				width="480"
+				height="480"
+				loading="eager"
+				fetchpriority="high"
+				decoding="async"
+			/>
 		</div>
 	</Column>
 

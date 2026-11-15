@@ -105,13 +105,14 @@ const servicesList = [
 	const servicesItem = document.getElementById("services-nav-item");
 	const servicesExpandBtn = document.getElementById("services-expand-btn");
 
-	// Header sticky shadow on scroll
+	// Header sticky shadow on scroll (window scroll listener)
 	if (header) {
 		const onScroll = () => {
-			header.classList.toggle("header--scrolled", body.scrollTop > 10);
+			const scrolled = (window.scrollY || document.documentElement.scrollTop || 0) > 10;
+			header.classList.toggle("header--scrolled", scrolled);
 		};
 		onScroll();
-		body.addEventListener("scroll", onScroll, { passive: true });
+		window.addEventListener("scroll", onScroll, { passive: true });
 	}
 
 	// Close mobile drawer helper
@@ -147,23 +148,20 @@ const servicesList = [
 <style>
 	.header {
 		z-index: 2000;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
 		padding: 0 2.4rem;
 		height: var(--header-height);
 		background: #ffffff;
-		border-bottom: 1px solid rgba(15, 23, 42, 0.06);
-		transition: all 0.25s ease;
+		border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+		transition: height 0.25s ease, box-shadow 0.25s ease;
 
 		&.header--scrolled {
 			--header-height: 6.4rem;
-			position: fixed;
-			background: rgba(255, 255, 255, 0.94);
-			backdrop-filter: blur(12px);
-			-webkit-backdrop-filter: blur(12px);
-			box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
+			background: #ffffff;
+			box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
 			border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 		}
 
@@ -173,6 +171,7 @@ const servicesList = [
 			flex: 1 0 100%;
 			align-items: center;
 			justify-content: space-between;
+			background: #ffffff;
 		}
 	}
 
@@ -186,14 +185,13 @@ const servicesList = [
 		@media screen and (max-width: 1024px) {
 			z-index: 1999;
 			position: fixed;
-			top: 0;
+			top: var(--header-height);
 			left: 0;
 			right: 0;
 			bottom: 0;
-			width: 100vw;
 			width: 100%;
-			height: 100vh;
-			height: 100dvh;
+			height: calc(100vh - var(--header-height));
+			height: calc(100dvh - var(--header-height));
 			flex-direction: column;
 			align-items: stretch;
 			justify-content: flex-start;
@@ -203,7 +201,7 @@ const servicesList = [
 			transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
 			overflow-y: auto;
 			-webkit-overflow-scrolling: touch;
-			padding: calc(var(--header-height) + 1.2rem) 2.4rem 4rem;
+			padding: 2.4rem 2.4rem 4rem;
 
 			body.menu-open & {
 				transform: translateX(0);
@@ -283,10 +281,14 @@ const servicesList = [
 
 	.nav-chevron {
 		transition: transform 0.2s ease, color 0.2s ease;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
 
 		&.nav-chevron--desktop {
-			width: 1.2rem;
-			height: 1.2rem;
+			width: 1.8rem;
+			height: 1.8rem;
 			color: #64748b;
 
 			@media screen and (max-width: 1024px) {
@@ -295,8 +297,8 @@ const servicesList = [
 		}
 
 		&.nav-chevron--mobile {
-			width: 1.6rem;
-			height: 1.6rem;
+			width: 2.2rem;
+			height: 2.2rem;
 			color: #64748b;
 		}
 	}

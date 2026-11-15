@@ -7,9 +7,6 @@ export default defineConfig({
 		enabled: false,
 	},
 	output: "static",
-	image: {
-		format: ["avif", "webp"]
-	},
 	fonts: [
 		{
 			name: "Plus Jakarta Sans",

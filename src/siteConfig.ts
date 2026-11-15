@@ -32,6 +32,7 @@ const siteConfig: SiteConfig = {
 	email: "vorentis.it@gmail.com",
 	nav: {
 		main: [
+			{ text: "Home", url: "/" },
 			{ text: "About us", url: "/about" },
 			{ text: "Services", url: "/services" },
 			{ text: "Doctors", url: "/doctors" },

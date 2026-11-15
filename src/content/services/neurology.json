@@ -66,32 +66,38 @@
 				{
 					"title": "Stroke Prevention & Care",
 					"text": "Rapid vascular risk screening, neuro-telemetry, and post-stroke rehabilitation protocols.",
-					"icon": "brain"
+					"icon": "brain",
+					"image": "services/neurology/stroke-care.jpg"
 				},
 				{
 					"title": "Epilepsy & Seizure Management",
 					"text": "Precision digital electroencephalography (EEG) monitoring and personalized anti-seizure therapies.",
-					"icon": "brain"
+					"icon": "brain",
+					"image": "services/neurology/epilepsy-care.jpg"
 				},
 				{
 					"title": "Headache & Migraine Clinic",
 					"text": "Targeted therapies, nerve blocks, and lifestyle interventions for debilitating chronic headaches.",
-					"icon": "head"
+					"icon": "head",
+					"image": "services/neurology/headache-migraine.jpg"
 				},
 				{
 					"title": "Memory & Cognitive Disorders",
 					"text": "Early dementia and Alzheimer's assessments with tailored cognitive preservation plans.",
-					"icon": "brain"
+					"icon": "brain",
+					"image": "services/neurology/memory-cognitive.jpg"
 				},
 				{
 					"title": "Neuromuscular & Neuropathy",
 					"text": "High-accuracy EMG and nerve conduction studies for diabetic neuropathy and muscle disorders.",
-					"icon": "safety"
+					"icon": "safety",
+					"image": "services/neurology/neuromuscular-care.jpg"
 				},
 				{
 					"title": "Movement Disorders & Parkinson's",
 					"text": "Long-term functional mobility optimization and medication adjustment by neurological specialists.",
-					"icon": "brain"
+					"icon": "brain",
+					"image": "services/neurology/movement-disorders.jpg"
 				}
 			]
 		},
@@ -126,15 +132,23 @@
 				}
 			]
 		},
-
 		"patientFeedback": {
 			"badge": "Post-Treatment Feedback",
 			"title": "What Our Neurology Patients <strong>Say After Treatment</strong>",
 			"subtitle": "Real patient recovery journeys and post-treatment reflections from CareFirst Neurology.",
 			"metrics": [
-				{ "value": "98.7%", "label": "Care Satisfaction" },
-				{ "value": "4.9/5", "label": "Clinical Rating" },
-				{ "value": "1,800+", "label": "Patients Empowered" }
+				{
+					"value": "98.7%",
+					"label": "Care Satisfaction"
+				},
+				{
+					"value": "4.9/5",
+					"label": "Clinical Rating"
+				},
+				{
+					"value": "1,800+",
+					"label": "Patients Empowered"
+				}
 			],
 			"items": [
 				{

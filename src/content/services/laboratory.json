@@ -157,15 +157,23 @@
 				}
 			]
 		},
-
 		"patientFeedback": {
 			"badge": "Post-Test Patient Feedback",
 			"title": "What Patients <strong>Share After Lab Testing</strong>",
 			"subtitle": "Feedback from individuals and families who completed blood tests and health checkups with us.",
 			"metrics": [
-				{ "value": "99.9%", "label": "Accuracy Rating" },
-				{ "value": "4.9/5", "label": "Hygiene Score" },
-				{ "value": "< 4 Hrs", "label": "Fast Delivery" }
+				{
+					"value": "99.9%",
+					"label": "Accuracy Rating"
+				},
+				{
+					"value": "4.9/5",
+					"label": "Hygiene Score"
+				},
+				{
+					"value": "< 4 Hrs",
+					"label": "Fast Delivery"
+				}
 			],
 			"items": [
 				{

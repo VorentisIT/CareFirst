@@ -3,12 +3,8 @@ import "../../styles/global.css";
 import Layout from "@layouts/Layout.astro";
 import HeroSection from "@/components/blocks/HeroSection.astro";
 import StatisticsSection from "@/components/blocks/StatisticsSection.astro";
-import ServicesSection from "@/components/blocks/ServicesSection.astro";
-import WhyServiceSection from "@/components/blocks/WhyServiceSection.astro";
-import PatientFeedbackSection from "@/components/blocks/PatientFeedbackSection.astro";
-import TestimonialsSection from "@/components/blocks/TestimonialsSection.astro";
+import ServiceDetailSection from "@/components/blocks/ServiceDetailSection.astro";
 import CtaSection from "@/components/blocks/CtaSection.astro";
-import TechologySection from "@/components/blocks/TechologySection.astro";
 
 export function getStaticPaths() {
 	const modules = import.meta.glob("../../content/services/*.json", {
@@ -39,21 +35,6 @@ const { service } = Astro.props;
 			<StatisticsSection data={service.sections.statistics} />
 		)
 	}
-	{service.sections.areas && <ServicesSection data={service.sections.areas} />}
-	{
-		service.sections.whyChooseUs && (
-			<WhyServiceSection data={service.sections.whyChooseUs} />
-		)
-	}
-	{
-		service.sections.patientFeedback && (
-			<PatientFeedbackSection data={service.sections.patientFeedback} />
-		)
-	}
-	{
-		!service.sections.patientFeedback && service.sections.testimonials && (
-			<TestimonialsSection data={service.sections.testimonials} />
-		)
-	}
+	<ServiceDetailSection service={service} />
 	{service.sections.cta && <CtaSection data={service.sections.cta} />}
 </Layout>
