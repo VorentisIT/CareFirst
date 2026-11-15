@@ -13,79 +13,550 @@ const {
 ---
 
 <Section
-	class={props.config.class}
+	class={`services-section ${props.config.class || ""}`}
 	background={props.config.background}
 	sectionHeader={props.sectionHeader}
 >
-	{
-		props.items && (
-			<ul class="services-list">
-				{props.items.map((item: any) => (
-					<li class="service-card">
-						<span class="card-icon">
-							<Icon name={item.icon} />
-						</span>
-						<h3>{item.title}</h3>
-						<p>{item.text}</p>
-						{item.link && (
-							<a href={withBase(item.link.url)}>
-								{item.link.text}
-								<Icon name={item.link.icon} />
+	<div class="services-wrapper">
+		{
+			props.items && (
+				<div class="services-bento-grid">
+					{props.items.map((item: any) => {
+						const isFeatured = Boolean(item.featured || item.span === "wide");
+
+						return (
+							<article
+								class={`bento-card ${isFeatured ? "bento-card--featured" : "bento-card--compact"}`}
+								data-category={item.category || "All"}
+								data-title={item.title?.toLowerCase() || ""}
+								data-text={item.text?.toLowerCase() || ""}
+								data-tags={(item.tags || []).join(" ").toLowerCase()}
+							>
+								{isFeatured ? (
+									<>
+										<div class="bento-card__header">
+											<span class="bento-icon" aria-hidden="true">
+												<Icon name={item.icon} />
+											</span>
+
+											{item.badge && <span class="bento-badge">{item.badge}</span>}
+										</div>
+
+										<div class="bento-card__content">
+											<h3 class="bento-title">{item.title}</h3>
+											<p class="bento-text">{item.text}</p>
+
+											{item.tags && item.tags.length > 0 && (
+												<div class="bento-tags" aria-label="Key Clinical Procedures">
+													{item.tags.map((tag: string) => (
+														<span class="bento-tag">{tag}</span>
+													))}
+												</div>
+											)}
+										</div>
+									</>
+								) : (
+									<>
+										<div class="bento-card__header bento-card__header--compact">
+											<span class="bento-icon" aria-hidden="true">
+												<Icon name={item.icon} />
+											</span>
+
+											<div class="bento-card__header-right">
+												{item.badge && (
+													<div class="bento-card__badge-row">
+														<span class="bento-badge">{item.badge}</span>
+													</div>
+												)}
+												<h3 class="bento-title">{item.title}</h3>
+											</div>
+										</div>
+
+										<div class="bento-card__content">
+											<p class="bento-text">{item.text}</p>
+
+											{item.tags && item.tags.length > 0 && (
+												<div class="bento-tags" aria-label="Key Clinical Procedures">
+													{item.tags.map((tag: string) => (
+														<span class="bento-tag">{tag}</span>
+													))}
+												</div>
+											)}
+										</div>
+									</>
+								)}
+
+								{item.link && (
+									<div class="bento-card__action">
+										<a href={withBase(item.link.url)} class="bento-link">
+											<span class="link-label">{item.link.text || "Explore Department"}</span>
+											<span class="link-arrow" aria-hidden="true">
+												<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+													<line x1="5" y1="12" x2="19" y2="12"></line>
+													<polyline points="12 5 19 12 12 19"></polyline>
+												</svg>
+											</span>
+										</a>
+									</div>
+								)}
+							</article>
+						);
+					})}
+
+					{/* Coordinator Assistance Card */}
+					<article class="bento-card bento-card--coordinator bento-card--compact">
+						<div class="bento-card__header bento-card__header--compact">
+							<span class="bento-icon" aria-hidden="true">
+								<Icon name="care" />
+							</span>
+
+							<div class="bento-card__header-right">
+								<div class="bento-card__badge-row">
+									<span class="bento-badge">Direct Triage</span>
+								</div>
+								<h3 class="bento-title">Can't Find Your Condition?</h3>
+							</div>
+						</div>
+						<div class="bento-card__content">
+							<p class="bento-text">
+								Our clinical coordinators match your symptoms with the right department or physician in under 5 minutes.
+							</p>
+							<div class="coordinator-phone">
+								<span class="phone-label">24/7 Patient Coordination</span>
+								<a href="tel:+18004325890" class="phone-number">+1 (800) 432-5890</a>
+							</div>
+						</div>
+						<div class="bento-card__action">
+							<a href={withBase("/contact")} class="bento-link">
+								<span class="link-label">Speak with Coordinator</span>
+								<span class="link-arrow" aria-hidden="true">
+									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+										<line x1="5" y1="12" x2="19" y2="12"></line>
+										<polyline points="12 5 19 12 12 19"></polyline>
+									</svg>
+								</span>
 							</a>
-						)}
-					</li>
-				))}
-			</ul>
-		)
-	}
+						</div>
+					</article>
+				</div>
+			)
+		}
+	</div>
 </Section>
 
 <style>
-	.services-list {
-		display: grid;
-		margin-top: 6.4rem;
-		grid-template-columns: repeat(3, 1fr);
-		gap: var(--global-gap);
+	.services-section {
+		position: relative;
+	}
 
-		@media screen and (max-width: 1023px) {
-			grid-template-columns: 1fr;
+	.services-wrapper {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 2.4rem;
+		margin-top: 0;
+	}
+
+	/* Bespoke Bento Grid: Asymmetric multi-span architecture */
+	.services-bento-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-flow: dense;
+		gap: 2.4rem;
+		width: 100%;
+
+		@media screen and (max-width: 1080px) {
+			grid-template-columns: repeat(2, 1fr);
 		}
 
-		.service-card {
-			grid-column: span 1;
+		@media screen and (max-width: 720px) {
+			grid-template-columns: 1fr;
 		}
 	}
 
-	.service-card {
+	/* Base Bento Card */
+	.bento-card {
 		display: flex;
-		padding: var(--global-gap);
-		flex-flow: column;
-		gap: 1.6rem;
-		text-align: left;
-		border-radius: 1.6rem;
-		background-color: var(--color-white);
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 3.2rem;
+		border-radius: 2.4rem;
+		background: #ffffff;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+		box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03);
+		position: relative;
 		overflow: hidden;
+		transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease;
 
-		p {
-			margin-bottom: auto;
-			line-height: 1.67;
-		}
+		&:hover {
+			transform: translateY(-5px);
+			border-color: rgba(29, 84, 199, 0.3);
+			box-shadow: 0 20px 32px -8px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(29, 84, 199, 0.06);
 
-		a {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.8rem;
-			color: var(--color-primary);
-			font-weight: 600;
-			text-decoration: none;
-			transition: all 0.3s ease;
-
-			&:hover {
-				gap: 1.6rem;
+			.bento-icon {
+				background: linear-gradient(135deg, rgba(29, 84, 199, 0.16), rgba(13, 148, 136, 0.16));
+				transform: scale(1.05);
 			}
 
-			svg {
-				font-size: 1rem;
+			.link-arrow {
+				transform: translateX(4px);
+				background: var(--color-primary);
+				color: #ffffff;
+			}
+		}
+	}
+
+	/* Featured Card (Spans 2 columns on desktop) - Dark Architectural Elegance */
+	.bento-card--featured {
+		grid-column: span 2;
+		background: linear-gradient(145deg, #0b1528 0%, #0f224a 100%);
+		border: 1px solid rgba(59, 130, 246, 0.25);
+		box-shadow: 0 16px 36px -10px rgba(11, 21, 40, 0.35);
+		color: #ffffff;
+
+		@media screen and (max-width: 1080px) {
+			grid-column: span 2;
+		}
+
+		@media screen and (max-width: 720px) {
+			grid-column: span 1;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			right: -4rem;
+			bottom: -4rem;
+			width: 24rem;
+			height: 24rem;
+			border-radius: 50%;
+			background: radial-gradient(circle, rgba(29, 84, 199, 0.22) 0%, transparent 70%);
+			pointer-events: none;
+		}
+
+		.bento-icon {
+			background: rgba(255, 255, 255, 0.1);
+			border-color: rgba(255, 255, 255, 0.18);
+			color: #60a5fa;
+		}
+
+		.bento-badge {
+			background: rgba(59, 130, 246, 0.2);
+			border-color: rgba(96, 165, 250, 0.4);
+			color: #93c5fd;
+		}
+
+		.bento-title {
+			color: #ffffff;
+			font-size: 2.6rem;
+		}
+
+		.bento-text {
+			color: #cbd5e1;
+			font-size: 1.55rem;
+			max-width: 62rem;
+		}
+
+		.bento-tag {
+			background: rgba(255, 255, 255, 0.08);
+			border: 1px solid rgba(255, 255, 255, 0.14);
+			color: #e2e8f0;
+		}
+
+		.bento-link {
+			color: #ffffff;
+
+			.link-arrow {
+				background: rgba(255, 255, 255, 0.15);
+				color: #ffffff;
+			}
+		}
+
+		&:hover {
+			border-color: rgba(96, 165, 250, 0.6);
+			box-shadow: 0 24px 44px -10px rgba(29, 84, 199, 0.35);
+
+			.link-arrow {
+				background: #ffffff;
+				color: #0b1528;
+			}
+		}
+	}
+
+	/* Coordinator Card - Clean White Architectural Card */
+	.bento-card--coordinator {
+		background: #ffffff;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+		box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03);
+
+		.coordinator-phone {
+			display: flex;
+			flex-direction: column;
+			gap: 0.3rem;
+			padding: 1.4rem 1.8rem;
+			border-radius: 1.4rem;
+			background: #f8fafc;
+			border: 1px solid rgba(15, 23, 42, 0.08);
+			margin-top: 0.6rem;
+		}
+
+		.phone-label {
+			font-size: 1.15rem;
+			color: #64748b;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.04em;
+		}
+
+		.phone-number {
+			font-family: var(--font-jakarta);
+			font-size: 1.8rem;
+			font-weight: 800;
+			color: var(--color-primary);
+			text-decoration: none;
+			letter-spacing: 0.02em;
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: #0f172a;
+			}
+		}
+
+		&:hover {
+			border-color: rgba(29, 84, 199, 0.3);
+
+			.link-arrow {
+				background: var(--color-primary);
+				color: #ffffff;
+			}
+		}
+	}
+
+	/* Card Header */
+	.bento-card__header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 1.6rem;
+		margin-bottom: 2.4rem;
+	}
+
+	/* Compact Card Header: Icon height adjusted so both Eyebrow (top-right) and Title adjust alongside */
+	.bento-card__header--compact {
+		display: flex;
+		align-items: center;
+		gap: 1.6rem;
+		margin-bottom: 2rem;
+		width: 100%;
+	}
+
+	.bento-card__header--compact .bento-icon {
+		width: 5.6rem;
+		height: 5.6rem;
+		border-radius: 1.6rem;
+		flex-shrink: 0;
+
+		svg {
+			width: 2.6rem;
+			height: 2.6rem;
+		}
+	}
+
+	.bento-card__header-right {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-end;
+		text-align: right;
+		gap: 0.4rem;
+		flex: 1;
+		min-width: 0;
+	}
+
+	.bento-card__badge-row {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+
+		.bento-badge {
+			margin: 0;
+			white-space: nowrap;
+		}
+	}
+
+	.bento-card__header-right .bento-title {
+		font-size: 1.85rem;
+		font-weight: 700;
+		line-height: 1.25;
+		color: #0f172a;
+		margin: 0;
+		text-align: right;
+		width: 100%;
+		white-space: nowrap;
+
+		@media screen and (max-width: 1280px) {
+			font-size: 1.7rem;
+			white-space: normal;
+		}
+	}
+
+	.bento-icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 5.2rem;
+		height: 5.2rem;
+		border-radius: 1.6rem;
+		background: linear-gradient(135deg, rgba(29, 84, 199, 0.08), rgba(13, 148, 136, 0.08));
+		border: 1px solid rgba(29, 84, 199, 0.15);
+		color: var(--color-primary);
+		font-size: 2.4rem;
+		transition: all 0.3s ease;
+		flex-shrink: 0;
+
+		svg {
+			width: 2.4rem;
+			height: 2.4rem;
+		}
+	}
+
+	.bento-badge {
+		display: inline-block;
+		padding: 0.35rem 1.1rem;
+		border-radius: 9999px;
+		background: rgba(29, 84, 199, 0.07);
+		border: 1px solid rgba(29, 84, 199, 0.18);
+		color: var(--color-primary);
+		font-family: var(--font-jakarta);
+		font-size: 1.15rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	/* Card Content */
+	.bento-card__content {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+		flex: 1;
+	}
+
+	.bento-title {
+		margin: 0;
+		font-family: var(--font-jakarta);
+		font-size: 2.2rem;
+		font-weight: 700;
+		color: #0f172a;
+		letter-spacing: -0.015em;
+		line-height: 1.25;
+	}
+
+	.bento-text {
+		margin: 0;
+		font-family: var(--font-manrope);
+		font-size: 1.5rem;
+		color: #475569;
+		line-height: 1.65;
+	}
+
+	.bento-tags {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		flex-wrap: wrap;
+		margin-top: 0.8rem;
+	}
+
+	.bento-tag {
+		display: inline-block;
+		padding: 0.35rem 0.95rem;
+		border-radius: 0.8rem;
+		background: #f1f5f9;
+		color: #334155;
+		font-family: var(--font-manrope);
+		font-size: 1.2rem;
+		font-weight: 600;
+		letter-spacing: 0.01em;
+	}
+
+	/* Action Footer */
+	.bento-card__action {
+		margin-top: 2.4rem;
+		padding-top: 1.8rem;
+		border-top: 1px solid rgba(15, 23, 42, 0.06);
+	}
+
+	.bento-link {
+		display: inline-flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		color: #0f172a;
+		font-family: var(--font-jakarta);
+		font-size: 1.45rem;
+		font-weight: 700;
+		text-decoration: none;
+		transition: all 0.22s ease;
+
+		.link-arrow {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 3.2rem;
+			height: 3.2rem;
+			border-radius: 50%;
+			background: #f1f5f9;
+			color: #0f172a;
+			transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+		}
+	}
+
+	/* Empty State */
+	.services-empty-state {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 6rem 2rem;
+		text-align: center;
+		background: #ffffff;
+		border-radius: 2rem;
+		border: 1px dashed rgba(15, 23, 42, 0.15);
+		gap: 1.2rem;
+
+		.empty-icon {
+			color: #94a3b8;
+			margin-bottom: 0.4rem;
+		}
+
+		h4 {
+			margin: 0;
+			font-size: 2rem;
+			color: #0f172a;
+			font-family: var(--font-jakarta);
+		}
+
+		p {
+			margin: 0;
+			color: #64748b;
+			font-size: 1.5rem;
+		}
+
+		.empty-reset-btn {
+			cursor: pointer;
+			margin-top: 1rem;
+			padding: 0.9rem 2.2rem;
+			border-radius: 9999px;
+			background: #0f172a;
+			color: #ffffff;
+			border: none;
+			font-weight: 600;
+			font-size: 1.35rem;
+			transition: all 0.2s ease;
+
+			&:hover {
+				background: var(--color-primary);
+				transform: translateY(-1px);
 			}
 		}
 	}

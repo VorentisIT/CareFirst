@@ -32,37 +32,89 @@
 				"background": "bg-2"
 			},
 			"sectionHeader": {
-				"eyebrow": "Our services",
-				"title": "Comprehensive Medical Care"
+				"eyebrow": "Our Specialized Care",
+				"title": "Comprehensive <strong>Medical Specialties</strong>",
+				"subtitle": "World-class diagnostics and treatment across key disciplines, delivered by board-certified physicians dedicated to your comfort and health."
 			},
+			"categories": ["All", "Cardio & Neuro", "Diagnostics & Lab", "Family & Joint Care"],
 			"items": [
 				{
-					"title": "Crardiology",
-					"text": "Complete diagnostics of the cardiovascular system and individual treatment plans.",
+					"featured": true,
+					"title": "Cardiovascular Center of Excellence",
+					"badge": "Flagship Specialty",
+					"category": "Cardio & Neuro",
 					"icon": "cardio",
+					"text": "Comprehensive heart care combining non-invasive 3D echocardiography, 24h Holter telemetry, arrhythmia mapping, and personalized cardiac prevention plans.",
+					"tags": ["3D Echocardiography", "24h Holter Telemetry", "Stress ECG Lab", "Hypertension Clinic"],
 					"link": {
 						"url": "/services/cardiology",
-						"text": "Learn more",
+						"text": "Explore Department",
 						"icon": "arrow-right"
 					}
 				},
 				{
-					"title": "Neurology",
-					"text": "Expert treatment of nervous system diseases using modern medical techniques.",
+					"title": "Neurology & Brain Health",
+					"badge": "Neurosciences",
+					"category": "Cardio & Neuro",
 					"icon": "brain",
+					"text": "Advanced therapeutic solutions for migraines, stroke prevention, spine disorders, and central nervous system health.",
+					"tags": ["Digital EEG", "Nerve Conduction", "Headache Clinic"],
 					"link": {
-						"url": "/services/neurology",
-						"text": "Learn more",
+						"url": "/services",
+						"text": "Learn More",
 						"icon": "arrow-right"
 					}
 				},
 				{
-					"title": "Laboratory",
-					"text": "Fast and accurate laboratory tests based on our own modern diagnostic center.",
-					"icon": "farma",
+					"title": "Pediatrics & Family Health",
+					"badge": "Family Care",
+					"category": "Family & Joint Care",
+					"icon": "face",
+					"text": "Compassionate, gentle medical care for infants, children, and adolescents, from wellness exams to urgent pediatric care.",
+					"tags": ["Well-Child Checkups", "Immunizations", "Growth Tracking"],
 					"link": {
-						"url": "/services/laboratory",
-						"text": "Learn more",
+						"url": "/services",
+						"text": "Learn More",
+						"icon": "arrow-right"
+					}
+				},
+				{
+					"title": "Orthopedics & Spine",
+					"badge": "Musculoskeletal",
+					"category": "Family & Joint Care",
+					"icon": "spine",
+					"text": "Expert clinical care for joint arthritis, sports rehabilitation, spine wellness, and minimally invasive treatments.",
+					"tags": ["Joint Preservation", "Sports Rehab", "Spine Wellness"],
+					"link": {
+						"url": "/services",
+						"text": "Learn More",
+						"icon": "arrow-right"
+					}
+				},
+				{
+					"title": "Radiology & Digital Imaging",
+					"badge": "Imaging Center",
+					"category": "Diagnostics & Lab",
+					"icon": "bones",
+					"text": "High-definition 3T MRI, low-dose 128-slice CT scans, and high-frequency ultrasound for pinpoint internal diagnosis.",
+					"tags": ["3T Digital MRI", "Low-Dose CT", "4D Ultrasound"],
+					"link": {
+						"url": "/services",
+						"text": "Learn More",
+						"icon": "arrow-right"
+					}
+				},
+				{
+					"featured": true,
+					"title": "Automated Pathology & Diagnostic Center",
+					"badge": "ISO Accredited Lab",
+					"category": "Diagnostics & Lab",
+					"icon": "farma",
+					"text": "Precision clinical chemistry, hematology, and rapid infectious disease panels utilizing next-generation automated robotic analyzers.",
+					"tags": ["Metabolic Panels", "PCR Testing", "Lipid & Thyroid", "Walk-Ins Welcome"],
+					"link": {
+						"url": "/services",
+						"text": "Schedule Test",
 						"icon": "arrow-right"
 					}
 				}
@@ -75,7 +127,7 @@
 				"background": "bg-1"
 			},
 			"sectionHeader": {
-				"title": "Why patients choose Medicsare Clinic",
+				"title": "Why patients choose CareFirst Clinic",
 				"subtitle": "We combine decades of medical expertise with the latest technological advancements to provide world-class healthcare."
 			},
 			"reasons": [

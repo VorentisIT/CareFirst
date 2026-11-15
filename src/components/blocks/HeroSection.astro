@@ -16,7 +16,7 @@ const {
 const heroImage = images[`../assets/${props.image}`];
 ---
 
-<section class="hero-section" id="hero">
+<section class={`hero-section ${props.config?.compact ? 'hero-section--compact' : ''}`} id="hero">
 	<div class="hero-bg">
 		{
 			heroImage && (
@@ -93,6 +93,18 @@ const heroImage = images[`../assets/${props.image}`];
 			padding-bottom: 6rem;
 			padding-left: max(5%, 2rem);
 			padding-right: max(5%, 2rem);
+		}
+
+		&.hero-section--compact {
+			height: auto;
+			min-height: 52rem;
+			padding-top: calc(var(--header-height) + 5rem);
+			padding-bottom: 6rem;
+
+			@media screen and (max-width: 768px) {
+				padding-top: calc(var(--header-height) + 3rem);
+				padding-bottom: 4rem;
+			}
 		}
 	}
 
