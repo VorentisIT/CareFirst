@@ -8,42 +8,12 @@ import Burger from "@ui/Burger.astro";
 import { Icon } from "astro-icon/components";
 
 const servicesList = [
-	{
-		title: "Cardiology",
-		desc: "Heart & vascular diagnostics",
-		url: "/services/cardiology",
-		icon: "cardio",
-	},
-	{
-		title: "Neurology",
-		desc: "Brain, spine & nervous system",
-		url: "/services/neurology",
-		icon: "brain",
-	},
-	{
-		title: "Pediatrics",
-		desc: "Specialized child & infant care",
-		url: "/services/pediatric",
-		icon: "stetoscope",
-	},
-	{
-		title: "Orthopedics",
-		desc: "Bones, joints & spine treatments",
-		url: "/services/orthopedics",
-		icon: "bones",
-	},
-	{
-		title: "Radiology",
-		desc: "Digital X-Ray, CT & MRI scans",
-		url: "/services/radiology",
-		icon: "eye",
-	},
-	{
-		title: "Laboratory",
-		desc: "Clinical pathology & testing",
-		url: "/services/laboratory",
-		icon: "microscope",
-	},
+	{ title: "Cardiology", url: "/services/cardiology" },
+	{ title: "Neurology", url: "/services/neurology" },
+	{ title: "Pediatrics", url: "/services/pediatric" },
+	{ title: "Orthopedics", url: "/services/orthopedics" },
+	{ title: "Radiology", url: "/services/radiology" },
+	{ title: "Laboratory", url: "/services/laboratory" },
 ];
 ---
 
@@ -71,36 +41,22 @@ const servicesList = [
 											id="services-expand-btn"
 											aria-expanded="false"
 											aria-controls="services-dropdown"
-											aria-label="Toggle medical specialties submenu"
+											aria-label="Toggle services list"
 										>
 											<Icon name="chevron-down" class="nav-chevron nav-chevron--mobile" aria-hidden="true" />
 										</button>
 									</div>
 
-									<div class="services-dropdown" id="services-dropdown" aria-label="Medical Specialties Submenu">
-										<div class="services-dropdown__header">
-											<div class="dropdown-header-left">
-												<span class="pulse-dot" aria-hidden="true"></span>
-												<span class="dropdown-badge">Medical Specialties</span>
-											</div>
-											<a href={withBase("/services")} class="dropdown-view-all">
-												Explore All Departments <Icon name="arrow-right" class="arrow-icon" aria-hidden="true" />
-											</a>
-										</div>
-
-										<div class="services-dropdown__grid">
+									<div class="services-dropdown" id="services-dropdown" aria-label="Services Submenu">
+										<ul class="services-dropdown__list">
 											{servicesList.map((svc) => (
-												<a href={withBase(svc.url)} class="dropdown-item">
-													<span class="dropdown-item__icon" aria-hidden="true">
-														<Icon name={svc.icon} />
-													</span>
-													<div class="dropdown-item__content">
-														<strong class="dropdown-item__title">{svc.title}</strong>
-														<span class="dropdown-item__desc">{svc.desc}</span>
-													</div>
-												</a>
+												<li>
+													<a href={withBase(svc.url)} class="dropdown-item">
+														{svc.title}
+													</a>
+												</li>
 											))}
-										</div>
+										</ul>
 									</div>
 								</li>
 							);
@@ -351,23 +307,12 @@ const servicesList = [
 		@media screen and (max-width: 1024px) {
 			display: inline-flex;
 			align-items: center;
-			gap: 0.8rem;
+			justify-content: center;
 			background: transparent;
 			border: none;
-			padding: 0.8rem;
+			padding: 1rem;
 			cursor: pointer;
 		}
-	}
-
-	.mobile-services-badge {
-		font-size: 1.15rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		padding: 0.3rem 0.8rem;
-		border-radius: 9999px;
-		background: #eef2ff;
-		color: var(--color-primary);
 	}
 
 	/* Desktop Hover Expand */
@@ -396,38 +341,38 @@ const servicesList = [
 
 		.main-menu__item--expanded .services-dropdown {
 			display: block;
-			max-height: 80rem;
+			max-height: 40rem;
 			opacity: 1;
 			visibility: visible;
 			pointer-events: auto;
 		}
 	}
 
-	/* Services Dropdown - Desktop Elevated Card */
+	/* Simple, Clean Services Dropdown */
 	.services-dropdown {
 		position: absolute;
-		top: calc(100% + 1.2rem);
+		top: calc(100% + 0.8rem);
 		left: 50%;
-		transform: translateX(-50%) translateY(10px);
-		width: 60rem;
-		padding: 2rem;
+		transform: translateX(-50%) translateY(6px);
+		width: 22rem;
+		padding: 0.8rem;
 		background: #ffffff;
-		border-radius: 2rem;
-		border: 1px solid rgba(15, 23, 42, 0.07);
-		box-shadow: 0 24px 50px -12px rgba(15, 23, 42, 0.14), 0 0 0 1px rgba(15, 23, 42, 0.04);
+		border-radius: 1.4rem;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+		box-shadow: 0 16px 36px -4px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(15, 23, 42, 0.04);
 		opacity: 0;
 		visibility: hidden;
 		pointer-events: none;
-		transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+		transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
 		z-index: 2100;
 
 		&::before {
 			content: "";
 			position: absolute;
-			top: -1.6rem;
+			top: -1.2rem;
 			left: 0;
 			right: 0;
-			height: 1.6rem;
+			height: 1.2rem;
 		}
 
 		@media screen and (max-width: 1024px) {
@@ -452,167 +397,42 @@ const servicesList = [
 		}
 	}
 
-	.services-dropdown__header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding-bottom: 1.2rem;
-		margin-bottom: 1.2rem;
-		border-bottom: 1px solid rgba(15, 23, 42, 0.06);
-
-		@media screen and (max-width: 1024px) {
-			display: none;
-		}
-	}
-
-	.dropdown-header-left {
-		display: flex;
-		align-items: center;
-		gap: 0.8rem;
-	}
-
-	.pulse-dot {
-		width: 0.8rem;
-		height: 0.8rem;
-		border-radius: 9999px;
-		background: var(--color-primary);
-		box-shadow: 0 0 0 3px rgba(29, 84, 199, 0.18);
-	}
-
-	.dropdown-badge {
-		font-size: 1.2rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		color: #475569;
-	}
-
-	.dropdown-view-all {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.4rem;
-		font-size: 1.25rem;
-		font-weight: 600;
-		color: var(--color-primary);
-		text-decoration: none;
-		transition: all 0.15s ease;
-
-		&:hover {
-			color: var(--color-primary-dark);
-			gap: 0.7rem;
-		}
-
-		.arrow-icon {
-			width: 1.2rem;
-			height: 1.2rem;
-		}
-	}
-
-	.services-dropdown__grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 0.8rem;
-
-		@media screen and (max-width: 1024px) {
-			display: flex;
-			flex-direction: column;
-			gap: 0.2rem;
-		}
-	}
-
-	.dropdown-item {
-		display: flex;
-		align-items: center;
-		gap: 1.2rem;
-		padding: 1rem 1.2rem;
-		border-radius: 1.4rem;
-		border: 1px solid transparent;
-		text-decoration: none;
-		transition: background-color 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
-
-		&:hover {
-			background-color: #f8fafc;
-			border-color: rgba(29, 84, 199, 0.10);
-			transform: translateY(-1px);
-
-			.dropdown-item__icon {
-				background-color: var(--color-primary);
-				color: #ffffff;
-				box-shadow: 0 4px 12px rgba(29, 84, 199, 0.22);
-			}
-
-			.dropdown-item__title {
-				color: var(--color-primary);
-			}
-		}
-
-		@media screen and (max-width: 1024px) {
-			padding: 1rem 1.2rem;
-			background: transparent;
-			border: none;
-			border-radius: 0.8rem;
-
-			&:hover,
-			&:active {
-				background-color: #f1f5f9;
-				transform: none;
-
-				.dropdown-item__title {
-					color: var(--color-primary);
-				}
-			}
-		}
-	}
-
-	.dropdown-item__icon {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 4rem;
-		height: 4rem;
-		flex-shrink: 0;
-		border-radius: 1.2rem;
-		background: #eef2ff;
-		color: var(--color-primary);
-		transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-
-		:global(svg) {
-			width: 2rem;
-			height: 2rem;
-		}
-
-		@media screen and (max-width: 1024px) {
-			display: none;
-		}
-	}
-
-	.dropdown-item__content {
+	.services-dropdown__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
 		display: flex;
 		flex-direction: column;
 		gap: 0.2rem;
 	}
 
-	.dropdown-item__title {
+	.dropdown-item {
+		display: block;
+		padding: 0.9rem 1.4rem;
 		font-size: 1.45rem;
-		font-weight: 700;
-		color: #0f172a;
-		line-height: 1.2;
-		transition: color 0.15s ease;
+		font-weight: 500;
+		color: #334155;
+		text-decoration: none;
+		border-radius: 0.8rem;
+		transition: background-color 0.15s ease, color 0.15s ease, padding-left 0.15s ease;
 
-		@media screen and (max-width: 1024px) {
-			font-size: 1.6rem;
-			font-weight: 500;
-			color: #334155;
+		&:hover {
+			background-color: #f1f5f9;
+			color: var(--color-primary);
+			padding-left: 1.8rem;
 		}
-	}
-
-	.dropdown-item__desc {
-		font-size: 1.2rem;
-		color: #64748b;
-		line-height: 1.35;
 
 		@media screen and (max-width: 1024px) {
-			display: none;
+			padding: 1rem 1.2rem;
+			font-size: 1.6rem;
+			border-radius: 0.8rem;
+
+			&:hover,
+			&:active {
+				background-color: #f1f5f9;
+				color: var(--color-primary);
+				padding-left: 1.2rem;
+			}
 		}
 	}
 
