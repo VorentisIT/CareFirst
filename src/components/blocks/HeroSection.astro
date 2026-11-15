@@ -2,11 +2,8 @@
 import { Picture } from "astro:assets";
 import { withBase } from "@lib/urls";
 import { images } from "@lib/images";
-
-import Section from "@ui/Section.astro";
-import Column from "@ui/Column.astro";
+import Container from "@ui/Container.astro";
 import Button from "@ui/Button.astro";
-import ImageHolder from "@ui/ImageHolder.astro";
 
 interface Props {
 	data: any;
@@ -19,52 +16,207 @@ const {
 const heroImage = images[`../assets/${props.image}`];
 ---
 
-<Section
-	class={props.config.class}
-	background={props.config.background}
-	container={props.config.container}
->
-	<Column class="content">
-		{props.title && <h1 class="hero-title" set:html={props.title} />}
-		{props.subtitle && <p class="subtitle" set:html={props.subtitle} />}
-
+<section class="hero-section" id="hero">
+	<div class="hero-bg">
 		{
-			props.buttons && (
-				<div class="actions">
-					{props.buttons.map((btn: any) => (
-						<Button
-							variant={btn.variant}
-							color={btn.color}
-							href={withBase(btn.url)}
-						>
-							{btn.text}
-						</Button>
-					))}
-				</div>
+			heroImage && (
+				<Picture
+					src={heroImage}
+					alt="CareFirst Clinic - Advanced Healthcare"
+					formats={["avif", "webp"]}
+					widths={[640, 1024, 1600, 2048, 2560]}
+					sizes="100vw"
+					loading="eager"
+					fetchpriority="high"
+					decoding="async"
+					class="hero-bg__image"
+				/>
 			)
 		}
-	</Column>
+	</div>
 
-	<Column>
-		<ImageHolder>
-			<Picture
-				src={heroImage}
-				alt=""
-				formats={["avif", "webp"]}
-				width={552}
-				height={480}
-				sizes={"(min-width: 1024px) 60vw, 100vw"}
-			/>
-		</ImageHolder>
-	</Column>
-</Section>
+	<Container class="hero-container">
+		<div class="hero-content">
+			{props.eyebrow && <span class="hero-eyebrow">{props.eyebrow}</span>}
+			{props.title && <h1 class="hero-title" set:html={props.title} />}
+			{props.subtitle && <p class="hero-subtitle" set:html={props.subtitle} />}
+
+			{
+				props.buttons && (
+					<div class="hero-actions">
+						{props.buttons.map((btn: any) => (
+							<Button
+								variant={btn.variant}
+								color={btn.color}
+								href={withBase(btn.url)}
+							>
+								{btn.text}
+							</Button>
+						))}
+					</div>
+				)
+			}
+
+			<div class="hero-trust">
+				<div class="hero-trust__rating">
+					<div class="hero-trust__stars" aria-hidden="true">★★★★★</div>
+					<span class="hero-trust__score"><strong>4.9/5</strong> (2,500+ Verified Patient Reviews)</span>
+				</div>
+			</div>
+		</div>
+	</Container>
+</section>
 
 <style>
+	.hero-section {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		margin-top: calc(-1 * var(--header-height));
+		height: 100vh;
+		height: 100dvh;
+		min-height: 100vh;
+		min-height: 100dvh;
+		display: flex;
+		align-items: center;
+		padding-top: calc(var(--header-height) + 2rem);
+		padding-bottom: 3rem;
+		padding-left: 10%;
+		padding-right: clamp(2rem, 5vw, 6rem);
+		box-sizing: border-box;
+
+		@media screen and (max-width: 768px) {
+			height: auto;
+			min-height: 100vh;
+			min-height: 100dvh;
+			padding-top: calc(var(--header-height) + 4rem);
+			padding-bottom: 6rem;
+			padding-left: max(5%, 2rem);
+			padding-right: max(5%, 2rem);
+		}
+	}
+
+	.hero-bg {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+
+		:global(picture),
+		:global(img) {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: right center;
+		}
+	}
+
+	:global(.hero-container) {
+		width: 100%;
+		max-width: 100%;
+		margin: 0;
+		position: relative;
+		z-index: 1;
+	}
+
+	.hero-content {
+		max-width: 70rem;
+		display: flex;
+		flex-direction: column;
+		gap: var(--content-gap);
+
+		@media screen and (max-width: 1200px) {
+			max-width: 64rem;
+		}
+
+		@media screen and (max-width: 768px) {
+			max-width: 100%;
+		}
+	}
+
+	.hero-eyebrow {
+		display: inline-flex;
+		align-items: center;
+		align-self: flex-start;
+		padding: 0.6rem 1.6rem;
+		border-radius: 9999px;
+		background: rgba(29, 84, 199, 0.08);
+		border: 1px solid rgba(29, 84, 199, 0.22);
+		color: var(--color-primary);
+		font-family: var(--font-jakarta);
+		font-size: 1.3rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+
 	.hero-title {
+		color: var(--color-title);
+		font-size: clamp(3.6rem, 1.4rem + 4.8vw, 6rem);
+		line-height: 1.12;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+
+		:global(strong) {
+			color: var(--color-primary);
+		}
+	}
+
+	.hero-subtitle {
+		margin: 0;
+		max-width: 64rem;
 		color: var(--color-text);
+		font-size: clamp(1.6rem, 1.4rem + 0.5vw, 2rem);
+		line-height: 1.6;
+		font-weight: 500;
+	}
+
+	.hero-actions {
+		display: flex;
+		gap: 1.6rem;
+		flex-wrap: wrap;
+		margin-top: 1rem;
+	}
+
+	.hero-trust {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 1.6rem;
+		margin-top: 1.6rem;
+		padding-top: 1.6rem;
+		border-top: 1px solid rgba(15, 23, 42, 0.08);
+
+		@media screen and (max-width: 640px) {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1rem;
+		}
+	}
+
+	.hero-trust__rating {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+	}
+
+	.hero-trust__stars {
+		color: #eab308;
+		font-size: 1.6rem;
+		letter-spacing: 0.1em;
+	}
+
+	.hero-trust__score {
+		font-size: 1.35rem;
+		color: #334155;
+		font-weight: 500;
 
 		strong {
-			color: var(--color-primary);
+			color: #0f172a;
+			font-weight: 700;
 		}
 	}
 </style>

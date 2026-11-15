@@ -1,5 +1,5 @@
 {
-	"pageTitle": "Home | Medicsare Clinic",
+	"pageTitle": "Home | CareFirst Clinic",
 	"sections": {
 		"hero": {
 			"config": {
@@ -9,7 +9,7 @@
 			},
 			"title": "We care about your <strong>health</strong> with the highest professionalism",
 			"subtitle": "The most modern clinic in the heart of the city. We combine advanced medical experience with innovative equipment for your comfort.",
-			"image": "hero-image.webp",
+			"image": "hero-cover.webp",
 			"buttons": [
 				{
 					"text": "Book Appointment",

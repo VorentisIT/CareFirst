@@ -1,21 +1,58 @@
 ---
+import { Image } from "astro:assets";
 import siteConfig from "../../siteConfig";
-import { Icon } from "astro-icon/components";
+import logoImg from "../../assets/carefirst-logo.png";
+
+interface Props {
+	class?: string;
+}
+
+const { class: className } = Astro.props;
 ---
 
-<a href="/" class="logo">
-	<Icon name="logo" />
-	{siteConfig.name}
+<a href="/" class:list={["logo", className]} aria-label={siteConfig.name}>
+	<Image
+		src={logoImg}
+		alt={siteConfig.name}
+		class="logo__img"
+		loading="eager"
+	/>
 </a>
 
 <style>
 	.logo {
 		display: inline-flex;
-		gap: 1rem;
 		align-items: center;
+		text-decoration: none;
+		line-height: 1;
 
-		svg {
-			font-size: 3rem;
+		.logo__img {
+			display: block;
+			height: 5.8rem;
+			width: auto;
+			max-width: 100%;
+			object-fit: contain;
+			transition: height 0.3s ease;
+		}
+	}
+
+	:global(.header--scrolled) .logo .logo__img {
+		height: 4.4rem;
+	}
+
+	@media screen and (max-width: 1024px) {
+		.logo .logo__img {
+			height: 5.2rem;
+		}
+	}
+
+	@media screen and (max-width: 640px) {
+		.logo .logo__img {
+			height: 4.6rem;
+		}
+
+		:global(.header--scrolled) .logo .logo__img {
+			height: 4rem;
 		}
 	}
 </style>
